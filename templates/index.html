@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <title>Digit Recognizer</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      min-height: 100vh;
+
+      padding: 20px 0;
+
+      box-sizing: border-box;
+
+      color: white;
+    }
+
+    .container {
+      display: flex;
+      gap: 40px;
+    }
+
+    .box {
+      background-color: #444;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 11px 8px rgba(0,0,0,0.5);
+      text-align: center;
+      width: 320px;
+
+      box-sizing: border-box;
+
+      flex-shrink: 0;
+    }
+
+    canvas {
+      background-color: #313232;
+      border-radius: 15px;
+      cursor: pointer;
+      touch-action: none;
+    }
+
+    .nn-gif {
+      width: 220px;  /* or 400px or any fixed value */
+      height: 220px;
+    }
+
+    button {
+      margin: 10px 5px;
+      padding: 10px 20px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background-color: #2b2c2c;
+      color: white;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #005f73;
+    }
+
+    h3 {
+        word-wrap: break-word;
+    }
+
+    /* Narrow viewport */
+    @media (max-width: 500px) {
+
+        body {
+            align-items: flex-start;
+            padding-top: 20px;
+        }
+
+        .container {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .box {
+            width: 280px;
+            max-width: 90vw;
+        }
+
+        .nn-gif {
+            width: 220px;
+            height: 220px;
+        }
+    }
+
+    /* Wider viewport */
+    @media (min-width: 501px) {
+
+        .container {
+            flex-direction: row;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .box {
+            width: 280px;
+        }
+
+        canvas {
+            width: 220px;
+            height: 220px;
+        }
+
+        .nn-gif {
+            width: 220px;
+            height: 220px;
+        }
+    }
+
+    #predictDisplay {
+      font-size: 64px;
+      margin-top: 2px;
+    }
+
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Drawing box -->
+  <div class="box" id="drawArea">
+    <h3>Draw a digit (0–9)</h3>
+    <canvas id="canvas" width="220" height="220"></canvas>
+    <div>
+      <button onclick="clearCanvas()">Clear</button>
+      <button onclick="predict()">Predict</button>
+    </div>
+  </div>
+
+  <!-- Prediction box -->
+  <div class="box" id="resultArea" style="position: relative; overflow: hidden;">
+    <h3>Prediction</h3>
+    <img id="nn-gif" src="../static/nn.gif" width="220" height="220" />
+    <div id="predictDisplay"
+         style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+                font-size: 96px; font-weight: bold; color: white; text-shadow: 2px 2px 8px black;">
+      ?
+    </div>
+</div>
+
+</div>
+
+<script>
+  const canvas = document.getElementById('canvas');
+  const ctx = canvas.getContext('2d');
+  let drawing = false;
+
+  canvas.addEventListener('pointerdown', startDraw);
+  canvas.addEventListener('pointermove', draw);
+  canvas.addEventListener('pointerup', stopDraw);
+  canvas.addEventListener('pointerleave', stopDraw);
+
+  function startDraw(e) {
+      drawing = true;
+
+      const rect = canvas.getBoundingClientRect();
+
+      ctx.beginPath();
+
+      ctx.moveTo(
+          e.clientX - rect.left,
+          e.clientY - rect.top
+      );
+  }
+
+  function draw(e) {
+
+      if (!drawing) return;
+
+      const rect = canvas.getBoundingClientRect();
+
+      ctx.lineWidth = 15;
+      ctx.lineCap = 'round';
+      ctx.strokeStyle = 'black';
+
+      ctx.lineTo(
+          e.clientX - rect.left,
+          e.clientY - rect.top
+      );
+
+      ctx.stroke();
+
+      ctx.beginPath();
+
+      ctx.moveTo(
+          e.clientX - rect.left,
+          e.clientY - rect.top
+      );
+  }
+
+  function stopDraw() {
+      drawing = false;
+      ctx.beginPath();
+  }
+
+  function clearCanvas() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.beginPath();
+    document.getElementById('predictDisplay').innerText = '?';
+  }
+
+  function predict() {
+    const dataURL = canvas.toDataURL('image/png');
+    const display = document.getElementById('predictDisplay');
+
+    display.innerText = '';
+
+    fetch('/predict', {
+      method: 'POST',
+      body: JSON.stringify({ image: dataURL }),
+      headers: { 'Content-Type': 'application/json' }
+    })
+    .then(res => res.json())
+    .then(data => {
+      setTimeout(() => {
+        
+        display.innerText = data.prediction;
+      }, 1000); // simulate animation duration
+    })
+    .catch(err => {
+      console.error('Prediction failed', err);
+
+      display.innerText = '?';
+    });
+  }
+</script>
+
+</body>
+</html>
