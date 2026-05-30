@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digit Recognition</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<section class="hero">
+
+    <div class="project-page">
+
+        <h1>Digit Recognition Web App</h1>
+
+        <p>
+            Draw a digit from 0–9 and let the neural network predict it.
+        </p>
+
+        <div class="digit-container">
+
+            <!-- Drawing box -->
+            <div class="digit-box" id="drawArea">
+
+                <h3>Draw a digit (0–9)</h3>
+
+                <canvas id="canvas"
+                        width="280"
+                        height="280">
+                </canvas>
+
+                <div>
+                    <button onclick="clearCanvas()">Clear</button>
+                    <button onclick="predict()">Predict</button>
+                </div>
+
+            </div>
+
+            <!-- Prediction box -->
+            <div class="digit-box result-box">
+
+                <h3>Prediction</h3>
+
+                <img id="nn-gif"
+                     src="../images/projects/nn.gif"
+                     class="nn-gif">
+
+                <div id="predictDisplay" class="prediction-display">
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<script src="../js/digit-recognition.js"></script>
+
+</body>
+</html>
