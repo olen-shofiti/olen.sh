@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,58 +8,61 @@
 
     <link rel="stylesheet" href="../css/style.css">
 </head>
+
 <body>
 
-<section class="hero">
+    <section class="hero">
 
-    <div class="project-page">
+        <div class="project-page">
 
-        <h1>Digit Recognition Web App</h1>
+            <p class="description">
+                Draw a digit from 0 to 9 and see the magic unfold!
+            </p>
 
-        <p>
-            Draw a digit from 0–9 and let the neural network predict it.
-        </p>
+            <div class="digit-container">
 
-        <div class="digit-container">
+                <div class="digit-box">
 
-            <!-- Drawing box -->
-            <div class="digit-box" id="drawArea">
+                    <h3>Draw a digit (0–9)</h3>
 
-                <h3>Draw a digit (0–9)</h3>
+                    <canvas id="canvas" width="220" height="220">
+                    </canvas>
 
-                <canvas id="canvas"
-                        width="280"
-                        height="280">
-                </canvas>
+                    <div class="digit-actions">
+                        <button id="clearBtn">
+                            Clear
+                        </button>
 
-                <div>
-                    <button onclick="clearCanvas()">Clear</button>
-                    <button onclick="predict()">Predict</button>
+                        <button id="predictBtn">
+                            Predict
+                        </button>
+                    </div>
+
+                </div>
+
+                <div class="digit-box result-box">
+
+                    <h3>Prediction</h3>
+
+                    <img id="nn-gif" src="../images/nn.gif">
+
+                    <div id="predictDisplay" class="prediction-display">
+
+                    </div>
+
                 </div>
 
             </div>
 
-            <!-- Prediction box -->
-            <div class="digit-box result-box">
-
-                <h3>Prediction</h3>
-
-                <img id="nn-gif"
-                     src="../images/projects/nn.gif"
-                     class="nn-gif">
-
-                <div id="predictDisplay" class="prediction-display">
-                </div>
-
+            <div class="links">
+                <a href="../projects.html">← Back to Projects</a>
             </div>
 
         </div>
 
-    </div>
-
-</section>
-
-<script src="../js/digit-recognition.js"></script>
-
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort.min.js"></script>
+    <script src="../js/digit-recognition.js?v=2"></script>
 </body>
+
 </html>
