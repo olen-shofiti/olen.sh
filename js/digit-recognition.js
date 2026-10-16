@@ -1,330 +1,290 @@
-let session = null;
+const canvas = document.getElementById("canvas");
+const clearButton = document.getElementById("clearBtn");
+const predictButton = document.getElementById("predictBtn");
+const predictionDisplay = document.getElementById("predictDisplay");
+const statusDisplay = document.getElementById("demoStatus");
 
-async function loadModel() {
+let sessionPromise = null;
+let runtimePromise = null;
+let isPredicting = false;
 
-    try {
+function setStatus(message, state = "") {
+    if (!statusDisplay) return;
 
-        session =
-            await ort.InferenceSession.create(
-                "../model/mnist_cnn.onnx"
-            );
-
-    } catch (err) {
-
-        console.error(
-            "Failed to load model",
-            err
-        );
-    }
+    statusDisplay.textContent = message;
+    statusDisplay.dataset.state = state;
 }
 
-loadModel();
+function loadRuntime() {
+    if (window.ort) return Promise.resolve(window.ort);
+    if (runtimePromise) return runtimePromise;
 
-function argMax(arr) {
+    runtimePromise = new Promise((resolve, reject) => {
+        const script = document.createElement("script");
+        const timeoutId = window.setTimeout(() => {
+            script.remove();
+            reject(new Error("Timed out downloading ONNX Runtime."));
+        }, 20000);
 
-    return arr.indexOf(
-        Math.max(...arr)
-    );
+        script.src = new URL("../vendor/onnxruntime-web/ort.min.js", document.baseURI).href;
+        script.async = true;
+        script.onload = () => {
+            window.clearTimeout(timeoutId);
+            if (window.ort) {
+                resolve(window.ort);
+            } else {
+                reject(new Error("ONNX Runtime loaded without its browser API."));
+            }
+        };
+        script.onerror = () => {
+            window.clearTimeout(timeoutId);
+            reject(new Error("Could not download ONNX Runtime."));
+        };
+        document.head.appendChild(script);
+    }).catch((error) => {
+        runtimePromise = null;
+        throw error;
+    });
+
+    return runtimePromise;
 }
 
-async function predictDigit() {
+function loadModel() {
+    if (sessionPromise) return sessionPromise;
 
-    if (!session) {
+    sessionPromise = loadRuntime()
+        .then((ort) => {
+            // Keep the runtime and its WASM binary on the same origin and release.
+            ort.env.wasm.wasmPaths = new URL("../vendor/onnxruntime-web/", document.baseURI).href;
+            // Single-threaded WASM works without cross-origin isolation headers.
+            ort.env.wasm.numThreads = 1;
+            return ort.InferenceSession.create("../model/mnist_cnn.onnx");
+        })
+        .catch((error) => {
+            sessionPromise = null;
+            throw error;
+        });
 
-        alert("Model not loaded yet.");
-        return;
+    return sessionPromise;
+}
+
+function argMax(values) {
+    let bestIndex = -1;
+    let bestValue = -Infinity;
+
+    for (let i = 0; i < values.length; i++) {
+        if (Number.isFinite(values[i]) && values[i] > bestValue) {
+            bestValue = values[i];
+            bestIndex = i;
+        }
     }
 
-    const sourceCtx =
-        canvas.getContext("2d");
+    return bestIndex;
+}
 
-    const sourceImage =
-        sourceCtx.getImageData(
-            0,
-            0,
-            canvas.width,
-            canvas.height
-        );
+function makeModelInput(sourceCanvas, sourceContext) {
+    const { width, height } = sourceCanvas;
+    const sourceImage = sourceContext.getImageData(0, 0, width, height);
 
-    let minX = canvas.width;
-    let minY = canvas.height;
+    let minX = width;
+    let minY = height;
+    let maxX = -1;
+    let maxY = -1;
 
-    let maxX = 0;
-    let maxY = 0;
-
-    let found = false;
-
-    for (let y = 0; y < canvas.height; y++) {
-
-        for (let x = 0; x < canvas.width; x++) {
-
-            const idx =
-                (y * canvas.width + x) * 4;
-
-            const pixel =
-                sourceImage.data[idx];
-
-            if (pixel > 10) {
-
-                found = true;
-
+    for (let y = 0; y < height; y++) {
+        for (let x = 0; x < width; x++) {
+            const pixelIndex = (y * width + x) * 4;
+            if (sourceImage.data[pixelIndex] > 10) {
                 minX = Math.min(minX, x);
                 minY = Math.min(minY, y);
-
                 maxX = Math.max(maxX, x);
                 maxY = Math.max(maxY, y);
             }
         }
     }
 
-    if (!found) {
+    if (maxX < minX || maxY < minY) return null;
 
-        alert("Draw a digit first.");
-        return;
-    }
+    const cropWidth = maxX - minX + 1;
+    const cropHeight = maxY - minY + 1;
+    const inputCanvas = document.createElement("canvas");
+    inputCanvas.width = 28;
+    inputCanvas.height = 28;
 
-    const cropWidth =
-        maxX - minX + 1;
+    const inputContext = inputCanvas.getContext("2d", { willReadFrequently: true });
+    if (!inputContext) throw new Error("Could not prepare the drawing for prediction.");
 
-    const cropHeight =
-        maxY - minY + 1;
+    inputContext.fillStyle = "black";
+    inputContext.fillRect(0, 0, 28, 28);
 
-    const tmpCanvas =
-        document.createElement("canvas");
+    const scale = 20 / Math.max(cropWidth, cropHeight);
+    const drawWidth = cropWidth * scale;
+    const drawHeight = cropHeight * scale;
 
-    tmpCanvas.width = 28;
-    tmpCanvas.height = 28;
-
-    const tmpCtx =
-        tmpCanvas.getContext("2d");
-
-    tmpCtx.fillStyle = "black";
-
-    tmpCtx.fillRect(
-        0,
-        0,
-        28,
-        28
-    );
-
-    const targetSize = 20;
-    const scale =
-        targetSize /
-        Math.max(cropWidth, cropHeight);
-
-    const drawWidth =
-        cropWidth * scale;
-
-    const drawHeight =
-        cropHeight * scale;
-
-    const drawX =
-        (28 - drawWidth) / 2;
-
-    const drawY =
-        (28 - drawHeight) / 2;
-
-    tmpCtx.imageSmoothingEnabled = true;
-
-    tmpCtx.drawImage(
-        canvas,
-
+    inputContext.imageSmoothingEnabled = true;
+    inputContext.drawImage(
+        sourceCanvas,
         minX,
         minY,
         cropWidth,
         cropHeight,
-
-        drawX,
-        drawY,
+        (28 - drawWidth) / 2,
+        (28 - drawHeight) / 2,
         drawWidth,
         drawHeight
     );
 
-    const imageData =
-        tmpCtx.getImageData(
-            0,
-            0,
-            28,
-            28
-        );
+    const pixels = inputContext.getImageData(0, 0, 28, 28).data;
+    const input = new Float32Array(28 * 28);
 
-    const inputData =
-        new Float32Array(
-            28 * 28
-        );
-
-    for (let i = 0; i < 28 * 28; i++) {
-
-        const pixel =
-            imageData.data[i * 4];
-
-        let value =
-            pixel / 255.0;
-
-        /* Normalize exactly like PyTorch */
-        value =
-            (value - 0.1307) / 0.3081;
-
-        inputData[i] = value;
-
+    for (let i = 0; i < input.length; i++) {
+        input[i] = ((pixels[i * 4] / 255) - 0.1307) / 0.3081;
     }
-    const tensor =
-        new ort.Tensor(
-            "float32",
-            inputData,
-            [1, 1, 28, 28]
-        );
 
-    const results =
-        await session.run({
-            input: tensor
-        });
-
-    const output =
-        results.output.data;
-
-    const prediction =
-        argMax(
-            Array.from(output)
-        );
-
-
-    document
-        .getElementById(
-            "predictDisplay"
-        )
-        .innerText =
-        prediction;
+    return input;
 }
 
-const canvas = document.getElementById("canvas");
+async function predictDigit() {
+    if (!canvas || !predictionDisplay || isPredicting) return;
 
-canvas.addEventListener(
-    "touchmove",
-    function (e) {
-        e.preventDefault();
-    },
-    { passive: false }
-);
+    const context = canvas.getContext("2d", { willReadFrequently: true });
+    if (!context) {
+        setStatus("Drawing is unavailable in this browser.", "error");
+        return;
+    }
 
-canvas.addEventListener(
-    "touchstart",
-    function (e) {
-        e.preventDefault();
-    },
-    { passive: false }
-);
+    let input;
+    try {
+        input = makeModelInput(canvas, context);
+    } catch (error) {
+        console.error("Could not prepare the drawing", error);
+        setStatus("Could not read the drawing. Try refreshing the page.", "error");
+        return;
+    }
 
-canvas.addEventListener(
-    "touchend",
-    function (e) {
-        e.preventDefault();
-    },
-    { passive: false }
-);
+    if (!input) {
+        predictionDisplay.textContent = "";
+        setStatus("Draw a digit on the canvas first.", "error");
+        return;
+    }
 
-if (canvas) {
+    isPredicting = true;
+    if (predictButton) predictButton.disabled = true;
+    if (clearButton) clearButton.disabled = true;
+    setStatus("Loading the digit model…", "loading");
 
-    const ctx = canvas.getContext("2d");
+    try {
+        const [ort, session] = await Promise.all([loadRuntime(), loadModel()]);
+        const inputName = session.inputNames[0];
+        const outputName = session.outputNames[0];
 
-    let drawing = false;
+        if (!inputName || !outputName) {
+            throw new Error("The digit model has an unexpected input or output format.");
+        }
 
-    function stopDrawing(e) {
+        setStatus("Recognizing your digit…", "loading");
+        const results = await session.run({
+            [inputName]: new ort.Tensor("float32", input, [1, 1, 28, 28])
+        });
 
-        if (e) {
-            e.preventDefault();
+        const output = results[outputName]?.data;
+        if (!output || output.length !== 10) {
+            throw new Error("The digit model returned an unexpected result.");
+        }
 
-            if (
-                e.pointerId !== undefined &&
-                canvas.hasPointerCapture(e.pointerId)
-            ) {
-                canvas.releasePointerCapture(e.pointerId);
+        const prediction = argMax(output);
+        if (prediction < 0) throw new Error("The digit model returned no valid prediction.");
+
+        predictionDisplay.textContent = String(prediction);
+        setStatus("Prediction ready.", "success");
+    } catch (error) {
+        console.error("Digit prediction failed", error);
+        predictionDisplay.textContent = "";
+        setStatus(
+            "Could not load or run the digit model. Check that the site files are available, then try again.",
+            "error"
+        );
+    } finally {
+        isPredicting = false;
+        if (predictButton) predictButton.disabled = false;
+        if (clearButton) clearButton.disabled = false;
+    }
+}
+
+if (!canvas || !clearButton || !predictButton || !predictionDisplay) {
+    setStatus("The digit demo could not start because part of the page is missing.", "error");
+} else {
+    const context = canvas.getContext("2d", { willReadFrequently: true });
+
+    if (!context) {
+        setStatus("Drawing is unavailable in this browser.", "error");
+        clearButton.disabled = true;
+        predictButton.disabled = true;
+    } else {
+        let drawing = false;
+
+        function getCanvasPoint(event) {
+            const rect = canvas.getBoundingClientRect();
+            return {
+                x: (event.clientX - rect.left) * (canvas.width / rect.width),
+                y: (event.clientY - rect.top) * (canvas.height / rect.height)
+            };
+        }
+
+        function stopDrawing(event) {
+            drawing = false;
+            context.beginPath();
+
+            if (event && canvas.hasPointerCapture(event.pointerId)) {
+                canvas.releasePointerCapture(event.pointerId);
             }
         }
 
-        drawing = false;
-        ctx.beginPath();
-    }
+        canvas.addEventListener("pointerdown", (event) => {
+            event.preventDefault();
+            if (isPredicting) return;
 
-    function getCanvasPoint(e) {
+            canvas.setPointerCapture(event.pointerId);
+            drawing = true;
 
-        const rect = canvas.getBoundingClientRect();
-        const scaleX = canvas.width / rect.width;
-        const scaleY = canvas.height / rect.height;
-
-        return {
-            x: (e.clientX - rect.left) * scaleX,
-            y: (e.clientY - rect.top) * scaleY
-        };
-    }
-
-    canvas.addEventListener("pointerdown", (e) => {
-
-        e.preventDefault();
-
-        canvas.setPointerCapture(e.pointerId);
-
-        drawing = true;
-
-        const point = getCanvasPoint(e);
-
-        ctx.beginPath();
-
-        ctx.moveTo(
-            point.x,
-            point.y
-        );
-    });
-
-    canvas.addEventListener("pointermove", (e) => {
-
-        e.preventDefault();
-
-        if (!drawing) return;
-
-        const point = getCanvasPoint(e);
-
-        ctx.lineWidth = 15;
-        ctx.lineCap = "round";
-        ctx.strokeStyle = "white";
-
-        ctx.lineTo(
-            point.x,
-            point.y
-        );
-
-        ctx.stroke();
-
-        ctx.beginPath();
-
-        ctx.moveTo(
-            point.x,
-            point.y
-        );
-    });
-
-    canvas.addEventListener("pointerup", stopDrawing);
-    canvas.addEventListener("pointercancel", stopDrawing);
-    canvas.addEventListener("lostpointercapture", stopDrawing);
-
-    document
-        .getElementById("clearBtn")
-        .addEventListener("click", () => {
-
-            ctx.clearRect(
-                0,
-                0,
-                canvas.width,
-                canvas.height
-            );
-
-            document.getElementById(
-                "predictDisplay"
-            ).innerText = "";
+            const point = getCanvasPoint(event);
+            context.beginPath();
+            context.fillStyle = "white";
+            context.arc(point.x, point.y, 7.5, 0, Math.PI * 2);
+            context.fill();
+            context.beginPath();
+            context.moveTo(point.x, point.y);
         });
 
-    document
-        .getElementById("predictBtn")
-        .addEventListener("click", predictDigit
-        );
+        canvas.addEventListener("pointermove", (event) => {
+            if (!drawing) return;
+            event.preventDefault();
+
+            const point = getCanvasPoint(event);
+            context.lineWidth = 15;
+            context.lineCap = "round";
+            context.strokeStyle = "white";
+            context.lineTo(point.x, point.y);
+            context.stroke();
+            context.beginPath();
+            context.moveTo(point.x, point.y);
+        });
+
+        canvas.addEventListener("pointerup", stopDrawing);
+        canvas.addEventListener("pointercancel", stopDrawing);
+        canvas.addEventListener("lostpointercapture", () => {
+            drawing = false;
+            context.beginPath();
+        });
+
+        clearButton.addEventListener("click", () => {
+            if (isPredicting) return;
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            predictionDisplay.textContent = "";
+            setStatus("Canvas cleared. Draw a digit from 0 to 9.");
+        });
+
+        predictButton.addEventListener("click", predictDigit);
+        setStatus("Draw a digit from 0 to 9, then choose Predict.");
+    }
 }

@@ -197,6 +197,26 @@ body {
     flex-wrap: wrap;
 }
 
+.demo-status {
+    min-height: 1.4em;
+    margin: 12px 0 0;
+    color: #e0e0e0;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.demo-status[data-state="loading"] {
+    color: #ffe08a;
+}
+
+.demo-status[data-state="success"] {
+    color: #a8f0bd;
+}
+
+.demo-status[data-state="error"] {
+    color: #ffb2b2;
+}
+
 .result-box {
     position: relative;
     overflow: hidden;
@@ -257,6 +277,11 @@ button {
 
 button:hover {
     background-color: #005f73;
+}
+
+button:disabled {
+    cursor: wait;
+    opacity: 0.65;
 }
 
 .project-page {
@@ -335,15 +360,43 @@ button:hover {
 /* Phones */
 @media (max-width: 768px) {
 
+    .hero {
+        min-height: 100vh;
+        min-height: 100svh;
+        height: auto;
+        overflow: visible;
+    }
+
+    .yinyang {
+        width: min(78vw, 400px);
+    }
+
+    .projects-container {
+        width: min(90%, 680px);
+        padding: 48px 0 24px;
+        box-sizing: border-box;
+    }
+
+    .project-card {
+        width: 100%;
+        box-sizing: border-box;
+        margin: 20px auto;
+        padding: 22px;
+    }
+
     .about-content {
-        left: 50%;
+        position: relative;
+        top: auto;
+        left: auto;
 
         width: min(84vw, 560px);
         max-width: none;
 
+        margin: 8vh auto;
         padding: 18px 20px;
 
-        transform: translate(-50%, -50%);
+        transform: none;
+        box-sizing: border-box;
     }
 
     .about-content h1 {
@@ -406,6 +459,10 @@ button:hover {
         gap: 10px;
     }
 
+    .demo-status {
+        font-size: 0.82rem;
+    }
+
     .digit-actions button {
         margin: 6px 0 0;
         padding: 8px 12px;
@@ -433,6 +490,16 @@ button:hover {
 
 /* Small phones */
 @media (max-width: 480px) {
+
+    .projects-container {
+        width: 88%;
+        padding-top: 32px;
+    }
+
+    .project-card {
+        margin: 14px auto;
+        padding: 18px 16px;
+    }
 
     .about-content {
         width: min(88vw, 360px);
@@ -496,6 +563,17 @@ button:hover {
         font-size: 0.85rem;
         margin-bottom: 8px;
         padding: 6px 8px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
     }
 }
 
