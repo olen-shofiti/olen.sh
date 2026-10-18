@@ -1,4 +1,5 @@
 (() => {
+    const t = key => window.siteTranslate ? window.siteTranslate(key) : key;
     const canvas = document.getElementById("path-grid");
     const algorithmSelect = document.getElementById("algorithm-select");
     const heuristicSelect = document.getElementById("heuristic-select");
@@ -18,7 +19,7 @@
 
     const context = canvas.getContext("2d");
     if (!context) {
-        status.textContent = "The grid could not start because canvas drawing is unavailable.";
+        status.textContent = t("The grid could not start because canvas drawing is unavailable.");
         return;
     }
 
@@ -170,7 +171,7 @@
         animationSteps = [];
         animationPosition = 0;
         activeSearch = null;
-        findButton.textContent = "Find Path";
+        findButton.textContent = t("Find Path");
     }
 
     function resetSearch(message = "Board updated. Choose Find Path to run the search.") {
@@ -179,7 +180,7 @@
         routeCells.clear();
         if (exploredCount) exploredCount.textContent = "—";
         if (pathLength) pathLength.textContent = "—";
-        status.textContent = message;
+        status.textContent = t(message);
         drawGrid();
     }
 
@@ -337,16 +338,19 @@
         animationFrame = null;
         animationSteps = [];
         animationPosition = 0;
-        findButton.textContent = "Find Path";
+        findButton.textContent = t("Find Path");
 
         if (exploredCount) exploredCount.textContent = String(activeSearch.expanded.length);
         if (pathLength) pathLength.textContent = activeSearch.found ? String(activeSearch.route.length) : "—";
 
-        if (activeSearch.found) {
-            status.textContent = `${algorithmName(activeSearch.algorithm)} found a path of ${activeSearch.route.length} steps after exploring ${activeSearch.expanded.length} nodes.`;
-        } else {
-            status.textContent = `${algorithmName(activeSearch.algorithm)} could not reach the goal after exploring ${activeSearch.expanded.length} nodes.`;
-        }
+        const algorithm = t(algorithmName(activeSearch.algorithm));
+        const template = activeSearch.found
+            ? "{algorithm} found a path of {steps} steps after exploring {nodes} nodes."
+            : "{algorithm} could not reach the goal after exploring {nodes} nodes.";
+        status.textContent = t(template)
+            .replace("{algorithm}", algorithm)
+            .replace("{steps}", activeSearch.route.length)
+            .replace("{nodes}", activeSearch.expanded.length);
 
         activeSearch = null;
     }
@@ -390,7 +394,7 @@
             ...activeSearch.route.map(index => ({ type: "route", index }))
         ];
         animationPosition = 0;
-        findButton.textContent = "Skip animation";
+        findButton.textContent = t("Skip animation");
 
         if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
             applyAnimationSteps();

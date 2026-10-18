@@ -7,6 +7,7 @@
     <title>Digit Recognition</title>
 
     <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/language.js" defer></script>
 </head>
 
 <body>
@@ -15,7 +16,7 @@
 
         <div class="project-page">
 
-            <p class="description">
+            <p class="description" data-language-text="Draw a digit from 0 to 9 and see the magic unfold!">
                 Draw a digit from 0 to 9 and see the magic unfold!
             </p>
 
@@ -23,18 +24,18 @@
 
                 <div class="digit-box">
 
-                    <h3>Draw a digit (0–9)</h3>
+                    <h3 data-language-text="Draw a digit (0–9)">Draw a digit (0–9)</h3>
 
                     <canvas id="canvas" width="220" height="220">
                     </canvas>
 
                     <div class="digit-actions">
                         <button id="clearBtn">
-                            Clear
+                            <span data-language-text="Clear">Clear</span>
                         </button>
 
                         <button id="predictBtn">
-                            Predict
+                            <span data-language-text="Predict">Predict</span>
                         </button>
                     </div>
 
@@ -46,7 +47,7 @@
 
                 <div class="digit-box result-box">
 
-                    <h3>Prediction</h3>
+                    <h3 data-language-text="Prediction">Prediction</h3>
 
                     <img id="nn-gif" src="../images/nn.gif">
 
@@ -59,13 +60,13 @@
             </div>
 
             <div class="links">
-                <a href="../projects.html">← Back to Projects</a>
+                <a href="../projects.html" data-language-text="← Back to Projects">← Back to Projects</a>
             </div>
 
         </div>
 
     </section>
-    <script src="../js/digit-recognition.js?v=3"></script>
+    <script src="../js/digit-recognition.js?v=3" defer></script>
 </body>
 
 </html>

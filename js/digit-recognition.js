@@ -11,7 +11,7 @@ let isPredicting = false;
 function setStatus(message, state = "") {
     if (!statusDisplay) return;
 
-    statusDisplay.textContent = message;
+    statusDisplay.textContent = window.siteTranslate ? window.siteTranslate(message) : message;
     statusDisplay.dataset.state = state;
 }
 

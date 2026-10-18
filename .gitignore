@@ -2,4 +2,5 @@
 .DS_Store?
 ._*
 .Trashes
-AGENTS.md
+*.md
+!README.md
