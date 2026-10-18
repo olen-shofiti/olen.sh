@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#111722">
+    <title>Pathfinding Visualizer | NaK0</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/pathfinding.js" defer></script>
+</head>
+
+<body>
+    <section class="hero pathfinding-hero">
+        <main class="pathfinding-page">
+            <header class="pathfinding-header">
+                <p class="pathfinding-eyebrow">INTERACTIVE PROJECT</p>
+                    <h1>Pathfinding Visualizer</h1>
+                    <p>Draw a maze, choose a search algorithm, and watch it find a route across the grid.</p>
+            </header>
+
+            <div class="pathfinding-layout">
+                <section class="pathfinding-board-panel" aria-labelledby="grid-title">
+                    <div class="pathfinding-board-heading">
+                        <h2 id="grid-title">The grid</h2>
+                        <span>30 × 30</span>
+                    </div>
+
+                    <p class="pathfinding-instructions" id="grid-help">
+                        Choose a tool, then click or drag on the grid. You can also focus the grid and use the arrow
+                        keys and Space.
+                    </p>
+
+                    <div class="pathfinding-canvas-wrap">
+                        <canvas id="path-grid" width="900" height="900" tabindex="0" role="application"
+                            aria-label="Pathfinding grid. Use arrow keys to move the cell cursor and Space to apply the selected tool."
+                            aria-describedby="grid-help"></canvas>
+                    </div>
+
+                    <ul class="pathfinding-legend" aria-label="Grid legend">
+                        <li><span class="legend-swatch start"></span>Start</li>
+                        <li><span class="legend-swatch goal"></span>Goal</li>
+                        <li><span class="legend-swatch wall"></span>Wall</li>
+                        <li><span class="legend-swatch explored"></span>Explored</li>
+                        <li><span class="legend-swatch route"></span>Path</li>
+                    </ul>
+                </section>
+
+                <aside class="pathfinding-controls" aria-label="Pathfinding controls">
+                    <label class="pathfinding-field" for="algorithm-select">
+                        <span>Algorithm</span>
+                        <select id="algorithm-select">
+                            <option value="bfs">Breadth-First Search</option>
+                            <option value="dfs">Depth-First Search</option>
+                            <option value="astar">A* Search</option>
+                            <option value="greedy">Greedy Best-First Search</option>
+                        </select>
+                    </label>
+
+                    <label class="pathfinding-field" for="heuristic-select">
+                        <span>Distance estimate <small>Used by A* and Greedy</small></span>
+                        <select id="heuristic-select">
+                            <option value="manhattan">Manhattan</option>
+                            <option value="euclidean">Euclidean</option>
+                        </select>
+                    </label>
+
+                    <fieldset class="pathfinding-tools">
+                        <legend>Grid tool</legend>
+                        <div class="pathfinding-tool-options">
+                            <label><input type="radio" name="grid-tool" value="wall" checked><span>Draw
+                                    walls</span></label>
+                            <label><input type="radio" name="grid-tool" value="erase"><span>Erase walls</span></label>
+                            <label><input type="radio" name="grid-tool" value="start"><span>Move start</span></label>
+                            <label><input type="radio" name="grid-tool" value="goal"><span>Move goal</span></label>
+                        </div>
+                    </fieldset>
+
+                    <label class="pathfinding-field speed-field" for="speed-select">
+                        <span>Animation speed <output id="speed-value" for="speed-select">8</output></span>
+                        <input id="speed-select" type="range" min="1" max="30" value="8">
+                        <small>Cells shown per frame</small>
+                    </label>
+
+                    <div class="pathfinding-actions">
+                        <button id="find-path" type="button">Find Path</button>
+                        <button id="randomize-grid" type="button">Randomize Walls</button>
+                        <button id="clear-walls" type="button">Clear Walls</button>
+                    </div>
+
+                    <div class="pathfinding-stats" aria-label="Search results">
+                        <div><span>Nodes explored</span><strong id="explored-count">—</strong></div>
+                        <div><span>Path length</span><strong id="path-length">—</strong></div>
+                    </div>
+
+                    <p id="path-status" class="pathfinding-status" role="status" aria-live="polite">
+                        Draw a maze or use the sample walls, then choose Find Path.
+                    </p>
+
+                    <a class="pathfinding-back" href="../projects.html">← Back to projects</a>
+                </aside>
+            </div>
+        </main>
+    </section>
+</body>
+
+</html>
