@@ -52,6 +52,50 @@ body {
         0 0 42px rgba(255, 255, 255, 0.14);
 }
 
+.entry-hint {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 16px;
+    transform: translate(-50%, -50%);
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.68);
+    backdrop-filter: blur(8px);
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.entry-hint[hidden] {
+    display: none;
+}
+
+.entry-hint.is-flashing {
+    animation: entry-hint-flash 2s ease-in-out 1 both;
+}
+
+@keyframes entry-hint-flash {
+    0%,
+    40%,
+    55%,
+    100% {
+        opacity: 0;
+    }
+
+    12%,
+    25%,
+    70%,
+    85% {
+        opacity: 1;
+    }
+}
+
 .content {
     position: absolute;
 
@@ -574,6 +618,11 @@ button:disabled {
         transition-duration: 0.01ms !important;
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
+    }
+
+    .entry-hint.is-flashing {
+        opacity: 1;
+        animation: none !important;
     }
 }
 

@@ -11,16 +11,20 @@
 
     <section class="hero">
 
-        <a href="projects.html">
-		    <img src="images/yin-yang.png"
-		         alt="Yin Yang"
-		         class="yinyang">
-		</a>
+        <a href="projects.html" aria-label="View projects">
+            <img src="images/yin-yang.png" alt="Yin Yang" class="yinyang">
+        </a>
+
+        <div class="entry-hint" id="entry-hint" role="status" aria-live="polite" hidden>
+            <span>Click to enter</span>
+        </div>
 
         <div class="content">
         </div>
 
     </section>
+
+    <script src="js/landing-hint.js" defer></script>
 
 </body>
 </html>
