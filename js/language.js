@@ -4,14 +4,14 @@
     const flags = { en: "🇬🇧", el: "🇬🇷", sq: "🇦🇱", sv: "🇸🇪" };
     const translations = {
         el: {
-            "Click to enter": "Κάντε κλικ για είσοδο", "View projects": "Δείτε τα έργα",
-            "About Me": "Σχετικά με εμένα", "Projects": "Έργα",
+            "Click to enter": "Κάντε κλικ για είσοδο", "View projects": "Δείτε τα πρότζεκτ",
+            "About Me": "Σχετικά με εμένα", "Projects": "Πρότζεκτ",
             "Professional button clicker. Occasional bug creator. Sometimes software developer.": "Επαγγελματίας πατητής κουμπιών. Περιστασιακός δημιουργός σφαλμάτων. Μερικές φορές προγραμματιστής.",
             "I spend my days telling computers exactly what to do and then acting surprised when they do something completely different.": "Περνώ τις μέρες μου λέγοντας στους υπολογιστές ακριβώς τι να κάνουν και μετά εκπλήσσομαι όταν κάνουν κάτι τελείως διαφορετικό.",
-            "This website is an effort to showcase my work because apparently keeping projects hidden in random folders isn't considered a portfolio.": "Αυτός ο ιστότοπος παρουσιάζει τη δουλειά μου, επειδή το να κρύβω έργα σε τυχαίους φακέλους μάλλον δεν θεωρείται «portfolio».",
+            "This website is an effort to showcase my work because apparently keeping projects hidden in random folders isn't considered a portfolio.": "Αυτός ο ιστότοπος παρουσιάζει τη δουλειά μου, επειδή το να κρύβω πρότζεκτ σε τυχαίους φακέλους μάλλον δεν θεωρείται «portfolio».",
             "When I'm not coding, I'm usually:": "Όταν δεν προγραμματίζω, συνήθως:", "Starting a new project.": "Ξεκινάω ένα νέο έργο.", "Thinking about another new project.": "Σκέφτομαι ένα ακόμη νέο έργο.", "Ignoring the project I was already working on.": "Αγνοώ το έργο που ήδη έφτιαχνα.", "Feel free to look around. The bugs are mostly friendly.": "Ρίξτε μια ματιά. Τα σφάλματα είναι ως επί το πλείστον φιλικά.",
             "Machine Learning, Computer Vision and Software Development": "Μηχανική μάθηση, υπολογιστική όραση και ανάπτυξη λογισμικού",
-            "Digit Recognition": "Αναγνώριση ψηφίων", "A handwritten-digit recognition application built using PyTorch.": "Εφαρμογή αναγνώρισης χειρόγραφων ψηφίων με χρήση του PyTorch.",
+            "Digit Recognition": "Αναγνώριση ψηφίων", "A handwritten-digit recognition application.": "Εφαρμογή αναγνώρισης χειρόγραφων ψηφίων.",
             "View Project": "Προβολή έργου", "Pathfinding Algorithms": "Αλγόριθμοι εύρεσης διαδρομής",
             "An interactive visualizer for BFS, DFS, Greedy BFS, and A* Search.": "Διαδραστική απεικόνιση των BFS, DFS, Greedy BFS και A*.",
             "INTERACTIVE PROJECT": "ΔΙΑΔΡΑΣΤΙΚΟ ΕΡΓΟ", "Pathfinding Visualizer": "Οπτικοποίηση εύρεσης διαδρομής",
@@ -21,8 +21,8 @@
             "Algorithm": "Αλγόριθμος", "Breadth-First Search": "Αναζήτηση κατά πλάτος", "Depth-First Search": "Αναζήτηση κατά βάθος", "Greedy Best-First Search": "Άπληστη αναζήτηση πρώτα του καλύτερου", "A* Search": "Αναζήτηση A*",
             "Distance estimate": "Εκτίμηση απόστασης", "Used by A* and Greedy": "Χρησιμοποιείται από A* και Greedy", "Manhattan": "Μανχάταν", "Euclidean": "Ευκλείδεια",
             "Grid tool": "Εργαλείο πλέγματος", "Draw walls": "Σχεδίαση τοίχων", "Erase walls": "Σβήσιμο τοίχων", "Move start": "Μετακίνηση αφετηρίας", "Move goal": "Μετακίνηση στόχου",
-            "Animation speed": "Ταχύτητα κίνησης", "Cells shown per frame": "Κελιά ανά καρέ", "Find Path": "Εύρεση διαδρομής", "Randomize Walls": "Τυχαίοι τοίχοι", "Clear Walls": "Καθαρισμός τοίχων", "Nodes explored": "Κόμβοι που εξερευνήθηκαν", "Path length": "Μήκος διαδρομής", "← Back to projects": "← Επιστροφή στα έργα",
-            "Draw a digit from 0 to 9 and see the magic unfold!": "Σχεδιάστε ένα ψηφίο από 0 έως 9 και δείτε τι θα συμβεί!", "Draw a digit (0–9)": "Σχεδιάστε ένα ψηφίο (0–9)", "Clear": "Καθαρισμός", "Predict": "Πρόβλεψη", "Prediction": "Πρόβλεψη", "← Back to Projects": "← Επιστροφή στα έργα"
+            "Animation speed": "Ταχύτητα κίνησης", "Cells shown per frame": "Κελιά ανά καρέ", "Find Path": "Εύρεση διαδρομής", "Randomize Walls": "Τυχαίοι τοίχοι", "Clear Walls": "Καθαρισμός τοίχων", "Nodes explored": "Κόμβοι που εξερευνήθηκαν", "Path length": "Μήκος διαδρομής", "← Back to projects": "← Επιστροφή στα πρότζεκτ",
+            "Draw a digit from 0 to 9 and see the magic unfold!": "Σχεδιάστε ένα ψηφίο από 0 έως 9 και δείτε τι θα συμβεί!", "Draw a digit (0–9)": "Σχεδιάστε ένα ψηφίο (0–9)", "Clear": "Καθαρισμός", "Predict": "Πρόβλεψη", "Prediction": "Πρόβλεψη", "← Back to Projects": "← Επιστροφή στα πρότζεκτ"
         },
         sq: {
             "Click to enter": "Klikoni për të hyrë", "View projects": "Shiko projektet", "About Me": "Rreth meje", "Projects": "Projektet",
@@ -30,7 +30,7 @@
             "I spend my days telling computers exactly what to do and then acting surprised when they do something completely different.": "I kaloj ditët duke u treguar kompjuterëve saktësisht çfarë të bëjnë, pastaj habitem kur bëjnë diçka krejt tjetër.",
             "This website is an effort to showcase my work because apparently keeping projects hidden in random folders isn't considered a portfolio.": "Kjo faqe prezanton punën time, sepse projektet e fshehura në dosje të rastësishme me sa duket nuk quhen «portofol».",
             "When I'm not coding, I'm usually:": "Kur nuk programoj, zakonisht:", "Starting a new project.": "Nis një projekt të ri.", "Thinking about another new project.": "Mendoj për një projekt tjetër të ri.", "Ignoring the project I was already working on.": "Injoroj projektin me të cilin po punoja.", "Feel free to look around. The bugs are mostly friendly.": "Shikoje faqen lirisht. Gabimet janë kryesisht miqësore.",
-            "Machine Learning, Computer Vision and Software Development": "Mësimi makinerik, vizioni kompjuterik dhe zhvillimi i softuerit", "Digit Recognition": "Njohja e shifrave", "A handwritten-digit recognition application built using PyTorch.": "Aplikacion për njohjen e shifrave të shkruara me dorë, ndërtuar me PyTorch.", "View Project": "Shiko projektin", "Pathfinding Algorithms": "Algoritmet e gjetjes së rrugës", "An interactive visualizer for BFS, DFS, Greedy BFS, and A* Search.": "Vizualizues interaktiv për BFS, DFS, Greedy BFS dhe kërkimin A*.",
+            "Machine Learning, Computer Vision and Software Development": "Mësimi makinerik, vizioni kompjuterik dhe zhvillimi i softuerit", "Digit Recognition": "Njohja e shifrave", "A handwritten-digit recognition application.": "Aplikacion për njohjen e shifrave të shkruara me dorë.", "View Project": "Shiko projektin", "Pathfinding Algorithms": "Algoritmet e gjetjes së rrugës", "An interactive visualizer for BFS, DFS, Greedy BFS, and A* Search.": "Vizualizues interaktiv për BFS, DFS, Greedy BFS dhe kërkimin A*.",
             "INTERACTIVE PROJECT": "PROJEKT NDËRVEPRUES", "Pathfinding Visualizer": "Vizualizues i gjetjes së rrugës", "Draw a maze, choose a search algorithm, and watch it find a route across the grid.": "Vizato një labirint, zgjidh algoritmin dhe shiko si gjen rrugën në rrjetë.", "The grid": "Rrjeta", "Click or drag on the grid. You can also focus the grid and use the arrow keys and Space.": "Kliko ose tërhiq në rrjetë. Mund ta fokusosh rrjetën dhe të përdorësh shigjetat dhe Space.", "Start": "Nisja", "Goal": "Synimi", "Wall": "Mur", "Explored": "Eksploruar", "Path": "Rruga", "Algorithm": "Algoritmi", "Breadth-First Search": "Kërkim në gjerësi", "Depth-First Search": "Kërkim në thellësi", "Greedy Best-First Search": "Kërkimi lakmitar më i mirë", "A* Search": "Kërkimi A*", "Distance estimate": "Vlerësimi i distancës", "Used by A* and Greedy": "Përdoret nga A* dhe Greedy", "Manhattan": "Manhattan", "Euclidean": "Euklidiane", "Grid tool": "Mjeti i rrjetës", "Draw walls": "Vizato mure", "Erase walls": "Fshi mure", "Move start": "Lëviz nisjen", "Move goal": "Lëviz synimin", "Animation speed": "Shpejtësia e animacionit", "Cells shown per frame": "Qeliza për kuadër", "Find Path": "Gjej rrugën", "Randomize Walls": "Mure rastësore", "Clear Walls": "Pastro muret", "Nodes explored": "Nyje të eksploruara", "Path length": "Gjatësia e rrugës", "← Back to projects": "← Kthehu te projektet", "Draw a digit from 0 to 9 and see the magic unfold!": "Vizato një shifër nga 0 në 9 dhe shiko rezultatin!", "Draw a digit (0–9)": "Vizato një shifër (0–9)", "Clear": "Pastro", "Predict": "Parashiko", "Prediction": "Parashikimi", "← Back to Projects": "← Kthehu te projektet"
         },
         sv: {
@@ -39,7 +39,7 @@
             "I spend my days telling computers exactly what to do and then acting surprised when they do something completely different.": "Jag ägnar dagarna åt att tala om för datorer exakt vad de ska göra och blir sedan förvånad när de gör något helt annat.",
             "This website is an effort to showcase my work because apparently keeping projects hidden in random folders isn't considered a portfolio.": "Den här webbplatsen visar upp mitt arbete eftersom projekt i slumpmässiga mappar tydligen inte räknas som en portfolio.",
             "When I'm not coding, I'm usually:": "När jag inte kodar brukar jag:", "Starting a new project.": "Börja på ett nytt projekt.", "Thinking about another new project.": "Fundera på ännu ett nytt projekt.", "Ignoring the project I was already working on.": "Ignorera projektet jag redan arbetade med.", "Feel free to look around. The bugs are mostly friendly.": "Titta gärna runt. Buggarna är oftast vänliga.",
-            "Machine Learning, Computer Vision and Software Development": "Maskininlärning, datorseende och mjukvaruutveckling", "Digit Recognition": "Sifferigenkänning", "A handwritten-digit recognition application built using PyTorch.": "En app för att känna igen handskrivna siffror, byggd med PyTorch.", "View Project": "Visa projekt", "Pathfinding Algorithms": "Vägsökningsalgoritmer", "An interactive visualizer for BFS, DFS, Greedy BFS, and A* Search.": "En interaktiv visualisering av BFS, DFS, Greedy BFS och A*-sökning.",
+            "Machine Learning, Computer Vision and Software Development": "Maskininlärning, datorseende och mjukvaruutveckling", "Digit Recognition": "Sifferigenkänning", "A handwritten-digit recognition application.": "En app för att känna igen handskrivna siffror.", "View Project": "Visa projekt", "Pathfinding Algorithms": "Vägsökningsalgoritmer", "An interactive visualizer for BFS, DFS, Greedy BFS, and A* Search.": "En interaktiv visualisering av BFS, DFS, Greedy BFS och A*-sökning.",
             "INTERACTIVE PROJECT": "INTERAKTIVT PROJEKT", "Pathfinding Visualizer": "Visualisering av vägsökning", "Draw a maze, choose a search algorithm, and watch it find a route across the grid.": "Rita en labyrint, välj sökalgoritm och se hur den hittar en väg genom rutnätet.", "The grid": "Rutnätet", "Click or drag on the grid. You can also focus the grid and use the arrow keys and Space.": "Klicka eller dra i rutnätet. Du kan också fokusera rutnätet och använda piltangenterna och mellanslag.", "Start": "Start", "Goal": "Mål", "Wall": "Vägg", "Explored": "Utforskat", "Path": "Väg", "Algorithm": "Algoritm", "Breadth-First Search": "Bredden-först-sökning", "Depth-First Search": "Djupet-först-sökning", "Greedy Best-First Search": "Girig bästa-först-sökning", "A* Search": "A*-sökning", "Distance estimate": "Avståndsestimat", "Used by A* and Greedy": "Används av A* och Greedy", "Manhattan": "Manhattan", "Euclidean": "Euklidiskt", "Grid tool": "Rutnätsverktyg", "Draw walls": "Rita väggar", "Erase walls": "Sudda väggar", "Move start": "Flytta start", "Move goal": "Flytta mål", "Animation speed": "Animationshastighet", "Cells shown per frame": "Rutor per bildruta", "Find Path": "Hitta väg", "Randomize Walls": "Slumpa väggar", "Clear Walls": "Rensa väggar", "Nodes explored": "Utforskade noder", "Path length": "Väglängd", "← Back to projects": "← Tillbaka till projekt", "Draw a digit from 0 to 9 and see the magic unfold!": "Rita en siffra från 0 till 9 och se resultatet!", "Draw a digit (0–9)": "Rita en siffra (0–9)", "Clear": "Rensa", "Predict": "Förutsäg", "Prediction": "Förutsägelse", "← Back to Projects": "← Tillbaka till projekt"
         }
     };
@@ -69,6 +69,126 @@
     for (const language of Object.keys(sharedTranslations)) {
         Object.assign(translations[language], sharedTranslations[language]);
     }
+    const pageTranslations = {
+        el: {
+            "Home": "Αρχική", "About": "Σχετικά", "Contact": "Επικοινωνία", "Primary navigation": "Κύρια πλοήγηση",
+            "Enter site": "Είσοδος στον ιστότοπο", "Hi, I'm NaK0.": "Γεια, είμαι ο NaK0.", "I build software projects focused on machine learning, computer vision, and algorithms.": "Δημιουργώ πρότζεκτ λογισμικού με έμφαση στη μηχανική μάθηση, την υπολογιστική όραση και τους αλγορίθμους.", "Explore my projects": "Δείτε τα πρότζεκτ μου", "Find me online or send me an email.": "Βρείτε με στο διαδίκτυο ή στείλτε μου email.", "GitHub profile": "Προφίλ GitHub", "LinkedIn profile": "Προφίλ LinkedIn", "Email me": "Στείλτε μου email",
+            "Digit drawing canvas": "Καμβάς σχεδίασης ψηφίων", "Draw with a pointer or touch. For keyboard drawing, focus the canvas, hold Space, and move with the arrow keys.": "Σχεδιάστε με δείκτη ή αφή. Για σχεδίαση με πληκτρολόγιο, εστιάστε στον καμβά, κρατήστε πατημένο το Space και κινηθείτε με τα βέλη.",
+            "NaK0 | Software and Machine Learning Projects": "NaK0 | Πρότζεκτ λογισμικού και μηχανικής μάθησης", "About NaK0": "Σχετικά με τον NaK0", "Projects | NaK0": "Πρότζεκτ | NaK0", "Digit Recognition | NaK0": "Αναγνώριση ψηφίων | NaK0", "Pathfinding Visualizer | NaK0": "Οπτικοποίηση εύρεσης διαδρομής | NaK0"
+        },
+        sq: {
+            "Home": "Kryefaqja", "About": "Rreth meje", "Contact": "Kontakti", "Primary navigation": "Navigimi kryesor",
+            "Enter site": "Hyr në faqe", "Hi, I'm NaK0.": "Përshëndetje, jam NaK0.", "I build software projects focused on machine learning, computer vision, and algorithms.": "Krijoj projekte softuerike të përqendruara te mësimi makinerik, vizioni kompjuterik dhe algoritmet.", "Explore my projects": "Shiko projektet e mia", "Find me online or send me an email.": "Më gjeni në internet ose më dërgoni një email.", "GitHub profile": "Profili në GitHub", "LinkedIn profile": "Profili në LinkedIn", "Email me": "Më dërgoni email",
+            "Digit drawing canvas": "Kanavacë për vizatimin e shifrave", "Draw with a pointer or touch. For keyboard drawing, focus the canvas, hold Space, and move with the arrow keys.": "Vizato me maus ose prekje. Për vizatim me tastierë, fokuso kanavacën, mbaj Space dhe lëviz me shigjetat.",
+            "NaK0 | Software and Machine Learning Projects": "NaK0 | Projekte softuerike dhe të mësimit makinerik", "About NaK0": "Rreth NaK0", "Projects | NaK0": "Projektet | NaK0", "Digit Recognition | NaK0": "Njohja e shifrave | NaK0", "Pathfinding Visualizer | NaK0": "Vizualizues i gjetjes së rrugës | NaK0"
+        },
+        sv: {
+            "Home": "Hem", "About": "Om", "Contact": "Kontakt", "Primary navigation": "Huvudnavigation",
+            "Enter site": "Gå in på webbplatsen", "Hi, I'm NaK0.": "Hej, jag är NaK0.", "I build software projects focused on machine learning, computer vision, and algorithms.": "Jag bygger mjukvaruprojekt med fokus på maskininlärning, datorseende och algoritmer.", "Explore my projects": "Utforska mina projekt", "Find me online or send me an email.": "Hitta mig online eller skicka ett mejl.", "GitHub profile": "GitHub-profil", "LinkedIn profile": "LinkedIn-profil", "Email me": "Skicka ett mejl",
+            "Digit drawing canvas": "Rityta för siffror", "Draw with a pointer or touch. For keyboard drawing, focus the canvas, hold Space, and move with the arrow keys.": "Rita med mus eller pekskärm. För att rita med tangentbordet: fokusera ritytan, håll ned mellanslag och flytta med piltangenterna.",
+            "NaK0 | Software and Machine Learning Projects": "NaK0 | Programvaru- och maskininlärningsprojekt", "About NaK0": "Om NaK0", "Projects | NaK0": "Projekt | NaK0", "Digit Recognition | NaK0": "Sifferigenkänning | NaK0", "Pathfinding Visualizer | NaK0": "Visualisering av vägsökning | NaK0"
+        }
+    };
+    for (const [language, dictionary] of Object.entries(pageTranslations)) {
+        Object.assign(translations[language], dictionary);
+    }
+
+    const refinedTranslations = {
+        el: {
+            "Enter NaK0's portfolio.": "Είσοδος στο portfolio του NaK0.",
+            "NaK0's software, machine learning, computer vision, and algorithm projects.": "Πρότζεκτ λογισμικού, μηχανικής μάθησης, υπολογιστικής όρασης και αλγορίθμων του NaK0.",
+            "Click to enter": "Κάντε κλικ για να εισέλθετε",
+            "This website is an effort to showcase my work because apparently keeping projects hidden in random folders isn't considered a portfolio.": "Αυτός ο ιστότοπος παρουσιάζει τη δουλειά μου, γιατί, όπως φαίνεται, τα πρότζεκτ κρυμμένα σε τυχαίους φακέλους δεν θεωρούνται portfolio.",
+            "Pathfinding Algorithms": "Αλγόριθμοι εύρεσης διαδρομών",
+            "An interactive visualizer for BFS, DFS, Greedy BFS, and A* Search.": "Διαδραστική οπτικοποίηση των BFS, DFS, Greedy BFS και A*.",
+            "Pathfinding Visualizer": "Οπτικοποίηση εύρεσης διαδρομών",
+            "The grid": "Πλέγμα",
+            "Click or drag on the grid. You can also focus the grid and use the arrow keys and Space.": "Κάντε κλικ ή σύρετε στο πλέγμα. Μπορείτε επίσης να εστιάσετε στο πλέγμα και να χρησιμοποιήσετε τα πλήκτρα βέλους και το Space.",
+            "Greedy Best-First Search": "Άπληστη αναζήτηση βέλτιστου κόμβου",
+            "Draw walls": "Σχεδιάστε τοίχους",
+            "Erase walls": "Σβήστε τοίχους",
+            "Randomize Walls": "Δημιουργία τυχαίων τοίχων",
+            "Clear Walls": "Αφαίρεση τοίχων",
+            "Pathfinding controls": "Στοιχεία ελέγχου εύρεσης διαδρομών",
+            "Pathfinding grid. Use arrow keys to move the cell cursor and Space to apply the selected tool.": "Πλέγμα εύρεσης διαδρομών. Χρησιμοποιήστε τα πλήκτρα βέλους για να μετακινήσετε τον δείκτη κελιού και το Space για να εφαρμόσετε το επιλεγμένο εργαλείο.",
+            "Grid legend": "Υπόμνημα πλέγματος",
+            "Search results": "Αποτελέσματα αναζήτησης",
+            "Language": "Γλώσσα",
+            "About Olen Shofiti": "Σχετικά με τον Olen Shofiti",
+            "Learn about me and explore software projects in machine learning, computer vision, and algorithms.": "Μάθετε περισσότερα για μένα και εξερευνήστε πρότζεκτ λογισμικού στη μηχανική μάθηση, την υπολογιστική όραση και τους αλγορίθμους.",
+            "Learn about Olen and explore software projects in machine learning, computer vision, and algorithms.": "Μάθετε περισσότερα για τον Olen και εξερευνήστε πρότζεκτ λογισμικού στη μηχανική μάθηση, την υπολογιστική όραση και τους αλγορίθμους.",
+            "Learn about NaK0 and explore software projects in machine learning, computer vision, and algorithms.": "Μάθετε περισσότερα για τον NaK0 και εξερευνήστε πρότζεκτ λογισμικού στη μηχανική μάθηση, την υπολογιστική όραση και τους αλγορίθμους.",
+            "Explore NaK0's interactive digit recognition and pathfinding projects.": "Εξερευνήστε τα διαδραστικά πρότζεκτ αναγνώρισης ψηφίων και εύρεσης διαδρομών του NaK0.",
+            "Draw a handwritten digit and run an in-browser machine learning model to recognize it.": "Σχεδιάστε ένα χειρόγραφο ψηφίο και αναγνωρίστε το με ένα μοντέλο μηχανικής μάθησης που εκτελείται στον φυλλομετρητή.",
+            "Try BFS, DFS, Greedy Best-First, and A* pathfinding in an interactive grid visualizer.": "Δοκιμάστε BFS, DFS, Greedy Best-First και A* σε μια διαδραστική οπτικοποίηση πλέγματος.",
+            "Projects | NaK0": "Πρότζεκτ | NaK0",
+            "Digit Recognition | NaK0": "Αναγνώριση ψηφίων | NaK0",
+            "Pathfinding Visualizer | NaK0": "Οπτικοποίηση εύρεσης διαδρομών | NaK0"
+        },
+        sq: {
+            "Enter NaK0's portfolio.": "Hyr në portofolin e NaK0.",
+            "NaK0's software, machine learning, computer vision, and algorithm projects.": "Projektet e NaK0 në softuer, mësim makinerik, vizion kompjuterik dhe algoritme.",
+            "Click to enter": "Kliko për të hyrë",
+            "This website is an effort to showcase my work because apparently keeping projects hidden in random folders isn't considered a portfolio.": "Kjo faqe paraqet punën time, sepse projektet e fshehura në dosje të rastësishme, me sa duket, nuk quhen portofol.",
+            "Pathfinding Algorithms": "Algoritme për gjetjen e rrugës",
+            "An interactive visualizer for BFS, DFS, Greedy BFS, and A* Search.": "Vizualizues interaktiv për BFS, DFS, Greedy BFS dhe A*.",
+            "Pathfinding Visualizer": "Vizualizues për gjetjen e rrugës",
+            "The grid": "Rrjeti",
+            "Click or drag on the grid. You can also focus the grid and use the arrow keys and Space.": "Kliko ose tërhiq në rrjet. Mund ta fokusosh edhe rrjetin dhe të përdorësh tastet e shigjetave dhe Space.",
+            "Greedy Best-First Search": "Kërkim lakmitar me përparësi për më të mirin",
+            "Draw walls": "Vizato mure",
+            "Erase walls": "Hiq muret",
+            "Randomize Walls": "Vendos mure rastësisht",
+            "Clear Walls": "Hiqi muret",
+            "Pathfinding controls": "Kontrollet e gjetjes së rrugës",
+            "Pathfinding grid. Use arrow keys to move the cell cursor and Space to apply the selected tool.": "Rrjet për gjetjen e rrugës. Përdor tastet e shigjetave për të lëvizur kursorin e qelisë dhe Space për të zbatuar mjetin e zgjedhur.",
+            "Grid legend": "Legjenda e rrjetit",
+            "Search results": "Rezultatet e kërkimit",
+            "Language": "Gjuha",
+            "About Olen Shofiti": "Rreth Olen Shofiti",
+            "Learn about me and explore software projects in machine learning, computer vision, and algorithms.": "Mëso më shumë për mua dhe eksploro projekte softuerike në mësimin makinerik, vizionin kompjuterik dhe algoritmet.",
+            "Learn about Olen and explore software projects in machine learning, computer vision, and algorithms.": "Mëso më shumë për Olen dhe eksploro projekte softuerike në mësimin makinerik, vizionin kompjuterik dhe algoritmet.",
+            "Learn about NaK0 and explore software projects in machine learning, computer vision, and algorithms.": "Mëso më shumë për NaK0 dhe eksploro projekte softuerike në mësimin makinerik, vizionin kompjuterik dhe algoritmet.",
+            "Explore NaK0's interactive digit recognition and pathfinding projects.": "Eksploro projektet ndërvepruese të NaK0 për njohjen e shifrave dhe gjetjen e rrugës.",
+            "Draw a handwritten digit and run an in-browser machine learning model to recognize it.": "Vizato një shifër të shkruar me dorë dhe përdor një model të mësimit makinerik në shfletues për ta njohur.",
+            "Try BFS, DFS, Greedy Best-First, and A* pathfinding in an interactive grid visualizer.": "Provo BFS, DFS, Greedy Best-First dhe A* në një vizualizues ndërveprues të rrjetit.",
+            "Projects | NaK0": "Projektet | NaK0",
+            "Digit Recognition | NaK0": "Njohja e shifrave | NaK0",
+            "Pathfinding Visualizer | NaK0": "Vizualizues për gjetjen e rrugës | NaK0"
+        },
+        sv: {
+            "Enter NaK0's portfolio.": "Gå in i NaK0:s portfolio.",
+            "NaK0's software, machine learning, computer vision, and algorithm projects.": "NaK0:s projekt inom mjukvara, maskininlärning, datorseende och algoritmer.",
+            "Click to enter": "Klicka för att komma in",
+            "This website is an effort to showcase my work because apparently keeping projects hidden in random folders isn't considered a portfolio.": "Den här webbplatsen visar upp mitt arbete, eftersom projekt gömda i slumpmässiga mappar tydligen inte räknas som en portfolio.",
+            "Pathfinding Algorithms": "Vägsökningsalgoritmer",
+            "An interactive visualizer for BFS, DFS, Greedy BFS, and A* Search.": "En interaktiv visualisering av BFS, DFS, Greedy BFS och A*.",
+            "Pathfinding Visualizer": "Vägsökningsvisualiserare",
+            "The grid": "Rutnät",
+            "Click or drag on the grid. You can also focus the grid and use the arrow keys and Space.": "Klicka eller dra i rutnätet. Du kan också fokusera rutnätet och använda piltangenterna och mellanslag.",
+            "Greedy Best-First Search": "Girig bäst-först-sökning",
+            "Erase walls": "Ta bort väggar",
+            "Cells shown per frame": "Celler per bildruta",
+            "Pathfinding controls": "Kontroller för vägsökning",
+            "Pathfinding grid. Use arrow keys to move the cell cursor and Space to apply the selected tool.": "Rutnät för vägsökning. Använd piltangenterna för att flytta cellmarkören och mellanslag för att använda det valda verktyget.",
+            "Grid legend": "Teckenförklaring för rutnätet",
+            "Search results": "Sökresultat",
+            "Language": "Språk",
+            "About Olen Shofiti": "Om Olen Shofiti",
+            "Learn about me and explore software projects in machine learning, computer vision, and algorithms.": "Läs mer om mig och utforska mjukvaruprojekt inom maskininlärning, datorseende och algoritmer.",
+            "Learn about Olen and explore software projects in machine learning, computer vision, and algorithms.": "Läs mer om Olen och utforska mjukvaruprojekt inom maskininlärning, datorseende och algoritmer.",
+            "Learn about NaK0 and explore software projects in machine learning, computer vision, and algorithms.": "Läs mer om NaK0 och utforska mjukvaruprojekt inom maskininlärning, datorseende och algoritmer.",
+            "Explore NaK0's interactive digit recognition and pathfinding projects.": "Utforska NaK0:s interaktiva projekt för sifferigenkänning och vägsökning.",
+            "Draw a handwritten digit and run an in-browser machine learning model to recognize it.": "Rita en handskriven siffra och låt en maskininlärningsmodell i webbläsaren känna igen den.",
+            "Try BFS, DFS, Greedy Best-First, and A* pathfinding in an interactive grid visualizer.": "Prova BFS, DFS, Greedy Best-First och A* i en interaktiv visualisering av ett rutnät.",
+            "Projects | NaK0": "Projekt | NaK0",
+            "Digit Recognition | NaK0": "Sifferigenkänning | NaK0",
+            "Pathfinding Visualizer | NaK0": "Vägsökningsvisualiserare | NaK0"
+        }
+    };
+    for (const [language, dictionary] of Object.entries(refinedTranslations)) {
+        Object.assign(translations[language], dictionary);
+    }
 
     function detectLanguage() {
         let saved = null;
@@ -96,27 +216,36 @@
             const key = element.dataset.languageTitle;
             element.title = dictionary[key] || key;
         });
+        document.querySelectorAll("[data-language-content]").forEach(element => {
+            const key = element.dataset.languageContent;
+            element.setAttribute("content", dictionary[key] || key);
+        });
         const select = document.getElementById("language-select");
-        if (select) select.value = language;
+        if (select) {
+            select.value = language;
+            select.setAttribute("aria-label", dictionary["Language"] || "Language");
+        }
         window.siteLanguage = language;
         window.siteTranslate = key => dictionary[key] || key;
         document.dispatchEvent(new CustomEvent("site-language-change", { detail: { language } }));
     }
 
-    const select = document.createElement("select");
-    select.id = "language-select";
-    select.className = "language-select";
-    select.setAttribute("aria-label", "Language / Γλώσσα / Gjuha / Språk");
-    for (const language of supported) {
-        const option = document.createElement("option");
-        option.value = language;
-        option.textContent = `${flags[language]} ${names[language]}`;
-        select.append(option);
+    if (!document.body.classList.contains("landing-page")) {
+        const select = document.createElement("select");
+        select.id = "language-select";
+        select.className = "language-select";
+        select.setAttribute("aria-label", "Language");
+        for (const language of supported) {
+            const option = document.createElement("option");
+            option.value = language;
+            option.textContent = `${flags[language]} ${names[language]}`;
+            select.append(option);
+        }
+        select.addEventListener("change", () => {
+            try { localStorage.setItem("olen-language", select.value); } catch (error) { /* Language still changes for this page. */ }
+            translate(select.value);
+        });
+        document.body.append(select);
     }
-    select.addEventListener("change", () => {
-        try { localStorage.setItem("olen-language", select.value); } catch (error) { /* Language still changes for this page. */ }
-        translate(select.value);
-    });
-    document.body.append(select);
     translate(detectLanguage());
 })();

@@ -1,4 +1,5 @@
 const canvas = document.getElementById("canvas");
+const digitCursor = document.getElementById("digit-cursor");
 const clearButton = document.getElementById("clearBtn");
 const predictButton = document.getElementById("predictBtn");
 const predictionDisplay = document.getElementById("predictDisplay");
@@ -240,10 +241,75 @@ if (!canvas || !clearButton || !predictButton || !predictionDisplay) {
             }
         }
 
+        let keyboardPoint = { x: canvas.width / 2, y: canvas.height / 2 };
+        let keyboardPainting = false;
+
+        function positionKeyboardCursor() {
+            if (!digitCursor) return;
+            digitCursor.style.left = `${(keyboardPoint.x / canvas.width) * 100}%`;
+            digitCursor.style.top = `${(keyboardPoint.y / canvas.height) * 100}%`;
+        }
+
+        function drawKeyboardStroke(from, to) {
+            context.beginPath();
+            context.lineWidth = 15;
+            context.lineCap = "round";
+            context.strokeStyle = "white";
+            context.moveTo(from.x, from.y);
+            context.lineTo(to.x, to.y);
+            context.stroke();
+        }
+
+        canvas.addEventListener("keydown", event => {
+            const movement = {
+                ArrowLeft: [-10, 0],
+                ArrowRight: [10, 0],
+                ArrowUp: [0, -10],
+                ArrowDown: [0, 10]
+            }[event.key];
+
+            if (event.code === "Space") {
+                event.preventDefault();
+                if (!isPredicting && !keyboardPainting) {
+                    keyboardPainting = true;
+                    context.beginPath();
+                    context.fillStyle = "white";
+                    context.arc(keyboardPoint.x, keyboardPoint.y, 7.5, 0, Math.PI * 2);
+                    context.fill();
+                }
+                return;
+            }
+
+            if (!movement) return;
+            event.preventDefault();
+            if (isPredicting) return;
+
+            const previousPoint = keyboardPoint;
+            keyboardPoint = {
+                x: Math.max(0, Math.min(canvas.width, keyboardPoint.x + movement[0])),
+                y: Math.max(0, Math.min(canvas.height, keyboardPoint.y + movement[1]))
+            };
+            if (keyboardPainting) drawKeyboardStroke(previousPoint, keyboardPoint);
+            if (digitCursor) {
+                digitCursor.parentElement.classList.add("keyboard-mode");
+                positionKeyboardCursor();
+            }
+        });
+
+        canvas.addEventListener("keyup", event => {
+            if (event.code === "Space") keyboardPainting = false;
+        });
+
+        window.addEventListener("blur", () => {
+            keyboardPainting = false;
+        });
+
         canvas.addEventListener("pointerdown", (event) => {
             event.preventDefault();
             if (isPredicting) return;
 
+            keyboardPainting = false;
+            if (digitCursor) digitCursor.parentElement.classList.remove("keyboard-mode");
             canvas.setPointerCapture(event.pointerId);
             drawing = true;
 

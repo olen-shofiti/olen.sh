@@ -4,6 +4,14 @@ body {
     padding: 0;
     height: 100%;
     overscroll-behavior: none;
+    background-color: #080b11;
+    background-image: image-set(
+        url("../images/bg.webp") type("image/webp"),
+        url("../images/bg.png") type("image/png")
+    );
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .hero {
@@ -13,11 +21,52 @@ body {
     min-height: 100vh;
 
     background-image: url("../images/bg.png");
+    background-image: image-set(
+        url("../images/bg.webp") type("image/webp"),
+        url("../images/bg.png") type("image/png")
+    );
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 
     overflow: hidden;
+}
+
+.site-nav {
+    position: fixed;
+    z-index: 100;
+    top: 14px;
+    left: 14px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 0;
+}
+
+.site-nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 36px;
+    padding: 0 10px;
+    border-radius: 7px;
+    color: #e7eaf0;
+    font: 600 0.82rem Arial, sans-serif;
+    text-decoration: none;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+    background: rgba(255, 255, 255, 0.14);
+    color: #fff;
+}
+
+.site-nav a:focus-visible,
+.yinyang-link:focus-visible,
+.site-home-links a:focus-visible,
+.contact-panel a:focus-visible {
+    outline: 3px solid #c4a7ff;
+    outline-offset: 3px;
 }
 
 .language-select {
@@ -40,15 +89,25 @@ body {
     outline-offset: 2px;
 }
 
-.yinyang {
+.yinyang-link {
     position: absolute;
-
     top: 50%;
     left: 50%;
+    display: block;
+    width: min(500px, 86vw);
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 1;
+}
 
-    width: 500px;
+.yinyang-link picture {
+    display: block;
+}
 
-    transform: translate3d(-50%, -50%, 0);
+.yinyang {
+    display: block;
+    width: 100%;
+    height: auto;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     will-change: transform, filter;
@@ -65,15 +124,55 @@ body {
 }
 
 .yinyang:hover {
-    transform: translate3d(-50%, -50%, 0) scale(1.06);
+    transform: scale(1.06);
     filter: brightness(1.04) contrast(1.03);
     box-shadow:
         0 0 22px rgba(255, 255, 255, 0.30),
         0 0 42px rgba(255, 255, 255, 0.14);
 }
 
+.site-home {
+    display: grid;
+    place-content: center;
+    gap: 20px;
+    color: #fff;
+    text-align: center;
+}
+
+.site-home h1 {
+    margin: 0;
+    font-size: clamp(3rem, 11vw, 7rem);
+    letter-spacing: 0.08em;
+    text-shadow: 0 3px 14px rgba(0, 0, 0, 0.75);
+}
+
+.site-home-links {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+}
+
+.site-home-links a {
+    min-width: 112px;
+    padding: 11px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.72);
+    border-radius: 9px;
+    color: #fff;
+    font: 600 0.95rem Arial, sans-serif;
+    text-decoration: none;
+    background: rgba(5, 8, 14, 0.36);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}
+
+.site-home-links a:hover,
+.site-home-links a:focus-visible {
+    background: rgba(255, 255, 255, 0.2);
+}
+
 .entry-hint {
     position: absolute;
+    z-index: 2;
     top: 50%;
     left: 50%;
     display: inline-flex;
@@ -90,6 +189,7 @@ body {
     letter-spacing: 0.04em;
     line-height: 1;
     white-space: nowrap;
+    pointer-events: none;
 }
 
 .entry-hint[hidden] {
@@ -139,14 +239,18 @@ body {
 }
 
 .about-content {
-    left: 50%;
+    position: relative;
+    top: auto;
+    left: auto;
 
     max-width: 760px;
     width: min(82vw, 760px);
 
     padding: 28px 32px;
 
-    transform: translate(-50%, -50%);
+    transform: none;
+    margin: 88px auto 36px;
+    box-sizing: border-box;
 
     background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(8px);
@@ -166,6 +270,31 @@ body {
 
 .about-content li+li {
     margin-top: 0.35rem;
+}
+
+.contact-panel {
+    margin-top: 26px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.24);
+}
+
+.contact-panel h2 {
+    margin: 0 0 8px;
+    font-size: 1.2rem;
+}
+
+.contact-panel p {
+    margin: 0 0 8px;
+}
+
+.contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+}
+
+.contact-panel a {
+    color: #d1baff;
 }
 
 .projects-container {
@@ -261,6 +390,46 @@ body {
     width: 380px;
 }
 
+.digit-box h2 {
+    margin-top: 0;
+    font-size: 1.17rem;
+}
+
+.digit-canvas-wrap {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+}
+
+#canvas:focus-visible {
+    outline: 3px solid #c4a7ff;
+    outline-offset: 3px;
+}
+
+.digit-cursor {
+    position: absolute;
+    display: none;
+    width: 14px;
+    height: 14px;
+    transform: translate(-50%, -50%);
+    border: 2px solid #c4a7ff;
+    border-radius: 50%;
+    background: rgba(196, 167, 255, 0.22);
+    pointer-events: none;
+}
+
+.digit-canvas-wrap.keyboard-mode .digit-cursor {
+    display: block;
+}
+
+.digit-canvas-help {
+    max-width: 320px;
+    margin: 8px 0 0;
+    color: #d1d6df;
+    font-size: 0.78rem;
+    line-height: 1.45;
+}
+
 .digit-actions {
     display: flex;
     justify-content: center;
@@ -306,8 +475,14 @@ canvas {
 }
 
 #nn-gif {
+    display: block;
     width: 220px;
-    height: 220px;
+    height: auto;
+}
+
+.project-page > h1 {
+    margin: 0 0 14px;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
 }
 
 .prediction-display {
@@ -368,7 +543,7 @@ button:disabled {
 
     margin: auto;
 
-    padding-top: 50px;
+    padding-top: 76px;
 
     color: white;
     text-align: center;
@@ -439,12 +614,37 @@ button:disabled {
     }
 
     .yinyang {
+        width: 100%;
+    }
+
+    .yinyang-link {
         width: min(78vw, 400px);
+    }
+
+    .site-nav {
+        top: 8px;
+        left: 8px;
+        gap: 0;
+        padding: 3px;
+    }
+
+    .site-nav a {
+        min-height: 34px;
+        padding: 0 7px;
+        font-size: 0.75rem;
+    }
+
+    .language-select {
+        top: 8px;
+        right: 8px;
+        min-height: 40px;
+        padding-right: 24px;
+        font-size: 0.75rem;
     }
 
     .projects-container {
         width: min(90%, 680px);
-        padding: 48px 0 24px;
+        padding: 72px 0 24px;
         box-sizing: border-box;
     }
 
@@ -463,7 +663,7 @@ button:disabled {
         width: min(84vw, 560px);
         max-width: none;
 
-        margin: 8vh auto;
+        margin: 72px auto 36px;
         padding: 18px 20px;
 
         transform: none;
@@ -480,7 +680,7 @@ button:disabled {
     }
 
     .project-page {
-        padding-top: 18px;
+        padding-top: 72px;
     }
 
     .digit-container {
@@ -510,6 +710,15 @@ button:disabled {
         margin-top: 0;
         margin-bottom: 8px;
         font-size: 0.95rem;
+    }
+
+    .digit-box h2 {
+        margin-bottom: 8px;
+        font-size: 0.95rem;
+    }
+
+    .digit-canvas-help {
+        font-size: 0.72rem;
     }
 
     canvas,
@@ -564,7 +773,7 @@ button:disabled {
 
     .projects-container {
         width: 88%;
-        padding-top: 32px;
+        padding-top: 72px;
     }
 
     .project-card {
@@ -588,7 +797,7 @@ button:disabled {
     }
 
     .project-page {
-        padding-top: 12px;
+        padding-top: 72px;
     }
 
     .digit-container {
@@ -605,6 +814,11 @@ button:disabled {
     .digit-box h3 {
         font-size: 0.85rem;
         margin-bottom: 6px;
+    }
+
+    .digit-box h2 {
+        margin-bottom: 6px;
+        font-size: 0.85rem;
     }
 
     .digit-actions {
@@ -685,7 +899,7 @@ button:disabled {
     max-width: 1320px;
     margin: 0 auto;
     padding: 24px 0 36px;
-    padding: clamp(24px, 4vw, 56px) 0 36px;
+    padding: clamp(76px, 7vw, 96px) 0 36px;
     color: #f2f4f8;
 }
 
@@ -1032,7 +1246,7 @@ button:disabled {
     .pathfinding-page {
         width: 96vw;
         max-width: 520px;
-        padding-top: 22px;
+        padding-top: 72px;
     }
 
     .pathfinding-header {

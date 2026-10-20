@@ -5,13 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#111722">
-    <title>Pathfinding Visualizer | NaK0</title>
+    <title data-language-text="Pathfinding Visualizer | NaK0">Pathfinding Visualizer | NaK0</title>
+    <meta name="description" content="Try BFS, DFS, Greedy Best-First, and A* pathfinding in an interactive grid visualizer." data-language-content="Try BFS, DFS, Greedy Best-First, and A* pathfinding in an interactive grid visualizer.">
+    <link rel="canonical" href="https://olen.sh/projects/pathfinding.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="NaK0">
+    <meta property="og:title" content="Pathfinding Visualizer | NaK0" data-language-content="Pathfinding Visualizer | NaK0">
+    <meta property="og:description" content="Try BFS, DFS, Greedy Best-First, and A* pathfinding in an interactive grid visualizer." data-language-content="Try BFS, DFS, Greedy Best-First, and A* pathfinding in an interactive grid visualizer.">
+    <meta property="og:url" content="https://olen.sh/projects/pathfinding.html">
+    <meta property="og:image" content="https://olen.sh/images/yin-yang.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pathfinding Visualizer | NaK0" data-language-content="Pathfinding Visualizer | NaK0">
+    <meta name="twitter:description" content="Try BFS, DFS, Greedy Best-First, and A* pathfinding in an interactive grid visualizer." data-language-content="Try BFS, DFS, Greedy Best-First, and A* pathfinding in an interactive grid visualizer.">
+    <meta name="twitter:image" content="https://olen.sh/images/yin-yang.webp">
+    <link rel="icon" type="image/png" href="../images/favicon.png">
     <link rel="stylesheet" href="../css/style.css">
     <script src="../js/language.js" defer></script>
     <script src="../js/pathfinding.js" defer></script>
 </head>
 
 <body>
+    <nav class="site-nav" aria-label="Primary navigation" data-language-aria="Primary navigation">
+        <a href="../home.html" data-language-text="Home">Home</a>
+        <a href="../projects.html" aria-current="location" data-language-text="Projects">Projects</a>
+        <a href="../about.html" data-language-text="About">About</a>
+    </nav>
     <section class="hero pathfinding-hero">
         <main class="pathfinding-page">
             <header class="pathfinding-header">
@@ -33,10 +51,11 @@
                     <div class="pathfinding-canvas-wrap">
                         <canvas id="path-grid" width="900" height="900" tabindex="0" role="application"
                             aria-label="Pathfinding grid. Use arrow keys to move the cell cursor and Space to apply the selected tool."
+                            data-language-aria="Pathfinding grid. Use arrow keys to move the cell cursor and Space to apply the selected tool."
                             aria-describedby="grid-help"></canvas>
                     </div>
 
-                    <ul class="pathfinding-legend" aria-label="Grid legend">
+                    <ul class="pathfinding-legend" aria-label="Grid legend" data-language-aria="Grid legend">
                         <li><span class="legend-swatch start"></span><span data-language-text="Start">Start</span></li>
                         <li><span class="legend-swatch goal"></span><span data-language-text="Goal">Goal</span></li>
                         <li><span class="legend-swatch wall"></span><span data-language-text="Wall">Wall</span></li>
@@ -87,7 +106,7 @@
                         <button id="clear-walls" type="button" data-language-text="Clear Walls">Clear Walls</button>
                     </div>
 
-                    <div class="pathfinding-stats" aria-label="Search results">
+                    <div class="pathfinding-stats" aria-label="Search results" data-language-aria="Search results">
                         <div><span data-language-text="Nodes explored">Nodes explored</span><strong id="explored-count">—</strong></div>
                         <div><span data-language-text="Path length">Path length</span><strong id="path-length">—</strong></div>
                     </div>

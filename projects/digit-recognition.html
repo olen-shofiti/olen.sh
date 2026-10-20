@@ -4,7 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digit Recognition</title>
+    <title data-language-text="Digit Recognition | NaK0">Digit Recognition | NaK0</title>
+    <meta name="description" content="Draw a handwritten digit and run an in-browser machine learning model to recognize it." data-language-content="Draw a handwritten digit and run an in-browser machine learning model to recognize it.">
+    <link rel="canonical" href="https://olen.sh/projects/digit-recognition.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="NaK0">
+    <meta property="og:title" content="Digit Recognition | NaK0" data-language-content="Digit Recognition | NaK0">
+    <meta property="og:description" content="Draw a handwritten digit and run an in-browser machine learning model to recognize it." data-language-content="Draw a handwritten digit and run an in-browser machine learning model to recognize it.">
+    <meta property="og:url" content="https://olen.sh/projects/digit-recognition.html">
+    <meta property="og:image" content="https://olen.sh/images/yin-yang.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Digit Recognition | NaK0" data-language-content="Digit Recognition | NaK0">
+    <meta name="twitter:description" content="Draw a handwritten digit and run an in-browser machine learning model to recognize it." data-language-content="Draw a handwritten digit and run an in-browser machine learning model to recognize it.">
+    <meta name="twitter:image" content="https://olen.sh/images/yin-yang.webp">
+    <link rel="icon" type="image/png" href="../images/favicon.png">
 
     <link rel="stylesheet" href="../css/style.css">
     <script src="../js/language.js" defer></script>
@@ -12,9 +25,17 @@
 
 <body>
 
+    <nav class="site-nav" aria-label="Primary navigation" data-language-aria="Primary navigation">
+        <a href="../home.html" data-language-text="Home">Home</a>
+        <a href="../projects.html" aria-current="location" data-language-text="Projects">Projects</a>
+        <a href="../about.html" data-language-text="About">About</a>
+    </nav>
+
     <section class="hero">
 
-        <div class="project-page">
+        <main class="project-page">
+
+            <h1 data-language-text="Digit Recognition">Digit Recognition</h1>
 
             <p class="description" data-language-text="Draw a digit from 0 to 9 and see the magic unfold!">
                 Draw a digit from 0 to 9 and see the magic unfold!
@@ -24,10 +45,17 @@
 
                 <div class="digit-box">
 
-                    <h3 data-language-text="Draw a digit (0–9)">Draw a digit (0–9)</h3>
+                    <h2 data-language-text="Draw a digit (0–9)">Draw a digit (0–9)</h2>
 
-                    <canvas id="canvas" width="220" height="220">
-                    </canvas>
+                    <div class="digit-canvas-wrap">
+                        <canvas id="canvas" width="220" height="220" tabindex="0" role="application"
+                            aria-label="Digit drawing canvas" data-language-aria="Digit drawing canvas"
+                            aria-describedby="digit-canvas-help"></canvas>
+                        <span id="digit-cursor" class="digit-cursor" aria-hidden="true"></span>
+                    </div>
+                    <p id="digit-canvas-help" class="digit-canvas-help" data-language-text="Draw with a pointer or touch. For keyboard drawing, focus the canvas, hold Space, and move with the arrow keys.">
+                        Draw with a pointer or touch. For keyboard drawing, focus the canvas, hold Space, and move with the arrow keys.
+                    </p>
 
                     <div class="digit-actions">
                         <button id="clearBtn">
@@ -47,9 +75,13 @@
 
                 <div class="digit-box result-box">
 
-                    <h3 data-language-text="Prediction">Prediction</h3>
+                    <h2 data-language-text="Prediction">Prediction</h2>
 
-                    <img id="nn-gif" src="../images/nn.gif">
+                    <picture>
+                        <source srcset="../images/nn.webp" type="image/webp">
+                        <img id="nn-gif" src="../images/nn.gif" width="259" height="255"
+                            alt="" loading="lazy" decoding="async">
+                    </picture>
 
                     <div id="predictDisplay" class="prediction-display">
 
@@ -63,7 +95,7 @@
                 <a href="../projects.html" data-language-text="← Back to Projects">← Back to Projects</a>
             </div>
 
-        </div>
+        </main>
 
     </section>
     <script src="../js/digit-recognition.js?v=3" defer></script>
