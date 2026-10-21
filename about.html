@@ -21,6 +21,7 @@
 
     <link rel="stylesheet" href="css/style.css">
     <script src="js/language.js" defer></script>
+    <script src="js/about-terminal.js" defer></script>
 </head>
 
 <body>
@@ -31,47 +32,14 @@
         <a href="about.html" aria-current="page" data-language-text="About">About</a>
     </nav>
 
-    <section class="hero">
+    <section class="hero about-hero">
 
         <main class="content about-content">
-            <h1 data-language-text="About Me">About Me</h1>
-
-            <p data-language-text="Professional button clicker. Occasional bug creator. Sometimes software developer.">
-                Professional button clicker. Occasional bug creator. Sometimes software developer.
-            </p>
-
-            <p data-language-text="I spend my days telling computers exactly what to do and then acting surprised when they do something completely different.">
-                I spend my days telling computers exactly what to do and then acting surprised
-                when they do something completely different.
-            </p>
-
-            <p data-language-text="This website is an effort to showcase my work because apparently keeping projects hidden in random folders isn't considered a portfolio.">
-                This website is an effort to showcase my work because apparently keeping projects hidden in random
-                folders
-                isn't considered "having a portfolio."
-            </p>
-
-            <p data-language-text="When I'm not coding, I'm usually:">
-                When I'm not coding, I'm usually:
-            </p>
-
-            <ul>
-                <li data-language-text="Starting a new project.">Starting a new project.</li>
-                <li data-language-text="Thinking about another new project.">Thinking about another new project.</li>
-                <li data-language-text="Ignoring the project I was already working on.">Ignoring the project I was already working on.</li>
-            </ul>
-
-            <p data-language-text="Feel free to look around. The bugs are mostly friendly.">
-                Feel free to look around. The bugs are mostly friendly.
-            </p>
-
-            <section class="contact-panel" id="contact" aria-labelledby="contact-title">
-                <h2 id="contact-title" data-language-text="Contact">Contact</h2>
-                <p data-language-text="Find me online or send me an email.">Find me online or send me an email.</p>
-                <div class="contact-links">
-                    <a href="https://github.com/olen-shofiti" rel="me" data-language-text="GitHub profile">GitHub profile</a>
-                    <a href="https://www.linkedin.com/in/olen-shofiti/" rel="me" data-language-text="LinkedIn profile">LinkedIn profile</a>
-                    <a href="mailto:olenshofiti@gmail.com" data-language-text="Email me">Email me</a>
+            <h1 class="sr-only" data-language-text="About Me">About Me</h1>
+            <section class="about-terminal" aria-labelledby="terminal-title">
+                <div class="terminal-bar"><span class="terminal-light"></span><span class="terminal-light"></span><span class="terminal-light"></span><span id="terminal-title">olen@shofiti:~</span></div>
+                <div class="terminal-body">
+                    <div id="terminal-transcript" class="terminal-transcript" role="log" aria-live="polite" aria-label="About me terminal" data-language-aria="About me terminal"></div>
                 </div>
             </section>
         </main>

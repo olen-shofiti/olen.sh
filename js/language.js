@@ -9,10 +9,10 @@
             "Professional button clicker. Occasional bug creator. Sometimes software developer.": "Επαγγελματίας πατητής κουμπιών. Περιστασιακός δημιουργός σφαλμάτων. Μερικές φορές προγραμματιστής.",
             "I spend my days telling computers exactly what to do and then acting surprised when they do something completely different.": "Περνώ τις μέρες μου λέγοντας στους υπολογιστές ακριβώς τι να κάνουν και μετά εκπλήσσομαι όταν κάνουν κάτι τελείως διαφορετικό.",
             "This website is an effort to showcase my work because apparently keeping projects hidden in random folders isn't considered a portfolio.": "Αυτός ο ιστότοπος παρουσιάζει τη δουλειά μου, επειδή το να κρύβω πρότζεκτ σε τυχαίους φακέλους μάλλον δεν θεωρείται «portfolio».",
-            "When I'm not coding, I'm usually:": "Όταν δεν προγραμματίζω, συνήθως:", "Starting a new project.": "Ξεκινάω ένα νέο έργο.", "Thinking about another new project.": "Σκέφτομαι ένα ακόμη νέο έργο.", "Ignoring the project I was already working on.": "Αγνοώ το έργο που ήδη έφτιαχνα.", "Feel free to look around. The bugs are mostly friendly.": "Ρίξτε μια ματιά. Τα σφάλματα είναι ως επί το πλείστον φιλικά.",
+            "When I'm not coding, I'm usually:": "Όταν δεν προγραμματίζω, συνήθως:", "Starting a new project.": "Ξεκινάω ένα νέο πρότζεκτ.", "Thinking about another new project.": "Σκέφτομαι ένα ακόμη νέο πρότζεκτ.", "Ignoring the project I was already working on.": "Αγνοώ το πρότζεκτ που ήδη έφτιαχνα.", "Feel free to look around. The bugs are mostly friendly.": "Ρίξτε μια ματιά. Τα bugs είναι ως επί το πλείστον φιλικά.",
             "Machine Learning, Computer Vision and Software Development": "Μηχανική μάθηση, υπολογιστική όραση και ανάπτυξη λογισμικού",
             "Digit Recognition": "Αναγνώριση ψηφίων", "A handwritten-digit recognition application.": "Εφαρμογή αναγνώρισης χειρόγραφων ψηφίων.",
-            "View Project": "Προβολή έργου", "Pathfinding Algorithms": "Αλγόριθμοι εύρεσης διαδρομής",
+            "View Project": "Προβολή πρότζεκτ", "Pathfinding Algorithms": "Αλγόριθμοι εύρεσης διαδρομής",
             "An interactive visualizer for BFS, DFS, Greedy BFS, and A* Search.": "Διαδραστική απεικόνιση των BFS, DFS, Greedy BFS και A*.",
             "INTERACTIVE PROJECT": "ΔΙΑΔΡΑΣΤΙΚΟ ΕΡΓΟ", "Pathfinding Visualizer": "Οπτικοποίηση εύρεσης διαδρομής",
             "Draw a maze, choose a search algorithm, and watch it find a route across the grid.": "Σχεδιάστε έναν λαβύρινθο, επιλέξτε αλγόριθμο αναζήτησης και δείτε πώς βρίσκει διαδρομή στο πλέγμα.",
@@ -26,10 +26,10 @@
         },
         sq: {
             "Click to enter": "Klikoni për të hyrë", "View projects": "Shiko projektet", "About Me": "Rreth meje", "Projects": "Projektet",
-            "Professional button clicker. Occasional bug creator. Sometimes software developer.": "Klikues profesionist butonash. Krijues i rastësishëm gabimesh. Ndonjëherë zhvillues softueri.",
+            "Professional button clicker. Occasional bug creator. Sometimes software developer.": "Klikues profesionist butonash. Krijues i rastësishëm defektesh. Ndonjëherë zhvillues softueri.",
             "I spend my days telling computers exactly what to do and then acting surprised when they do something completely different.": "I kaloj ditët duke u treguar kompjuterëve saktësisht çfarë të bëjnë, pastaj habitem kur bëjnë diçka krejt tjetër.",
             "This website is an effort to showcase my work because apparently keeping projects hidden in random folders isn't considered a portfolio.": "Kjo faqe prezanton punën time, sepse projektet e fshehura në dosje të rastësishme me sa duket nuk quhen «portofol».",
-            "When I'm not coding, I'm usually:": "Kur nuk programoj, zakonisht:", "Starting a new project.": "Nis një projekt të ri.", "Thinking about another new project.": "Mendoj për një projekt tjetër të ri.", "Ignoring the project I was already working on.": "Injoroj projektin me të cilin po punoja.", "Feel free to look around. The bugs are mostly friendly.": "Shikoje faqen lirisht. Gabimet janë kryesisht miqësore.",
+            "When I'm not coding, I'm usually:": "Kur nuk programoj, zakonisht:", "Starting a new project.": "Nis një projekt të ri.", "Thinking about another new project.": "Mendoj për një projekt tjetër të ri.", "Ignoring the project I was already working on.": "Injoroj projektin me të cilin po punoja.", "Feel free to look around. The bugs are mostly friendly.": "Shikoje faqen lirisht. Defektet janë pjesë e përvojës.",
             "Machine Learning, Computer Vision and Software Development": "Mësimi makinerik, vizioni kompjuterik dhe zhvillimi i softuerit", "Digit Recognition": "Njohja e shifrave", "A handwritten-digit recognition application.": "Aplikacion për njohjen e shifrave të shkruara me dorë.", "View Project": "Shiko projektin", "Pathfinding Algorithms": "Algoritmet e gjetjes së rrugës", "An interactive visualizer for BFS, DFS, Greedy BFS, and A* Search.": "Vizualizues interaktiv për BFS, DFS, Greedy BFS dhe kërkimin A*.",
             "INTERACTIVE PROJECT": "PROJEKT NDËRVEPRUES", "Pathfinding Visualizer": "Vizualizues i gjetjes së rrugës", "Draw a maze, choose a search algorithm, and watch it find a route across the grid.": "Vizato një labirint, zgjidh algoritmin dhe shiko si gjen rrugën në rrjetë.", "The grid": "Rrjeta", "Click or drag on the grid. You can also focus the grid and use the arrow keys and Space.": "Kliko ose tërhiq në rrjetë. Mund ta fokusosh rrjetën dhe të përdorësh shigjetat dhe Space.", "Start": "Nisja", "Goal": "Synimi", "Wall": "Mur", "Explored": "Eksploruar", "Path": "Rruga", "Algorithm": "Algoritmi", "Breadth-First Search": "Kërkim në gjerësi", "Depth-First Search": "Kërkim në thellësi", "Greedy Best-First Search": "Kërkimi lakmitar më i mirë", "A* Search": "Kërkimi A*", "Distance estimate": "Vlerësimi i distancës", "Used by A* and Greedy": "Përdoret nga A* dhe Greedy", "Manhattan": "Manhattan", "Euclidean": "Euklidiane", "Grid tool": "Mjeti i rrjetës", "Draw walls": "Vizato mure", "Erase walls": "Fshi mure", "Move start": "Lëviz nisjen", "Move goal": "Lëviz synimin", "Animation speed": "Shpejtësia e animacionit", "Cells shown per frame": "Qeliza për kuadër", "Find Path": "Gjej rrugën", "Randomize Walls": "Mure rastësore", "Clear Walls": "Pastro muret", "Nodes explored": "Nyje të eksploruara", "Path length": "Gjatësia e rrugës", "← Back to projects": "← Kthehu te projektet", "Draw a digit from 0 to 9 and see the magic unfold!": "Vizato një shifër nga 0 në 9 dhe shiko rezultatin!", "Draw a digit (0–9)": "Vizato një shifër (0–9)", "Clear": "Pastro", "Predict": "Parashiko", "Prediction": "Parashikimi", "← Back to Projects": "← Kthehu te projektet"
         },
@@ -73,19 +73,16 @@
         el: {
             "Home": "Αρχική", "About": "Σχετικά", "Contact": "Επικοινωνία", "Primary navigation": "Κύρια πλοήγηση",
             "Enter site": "Είσοδος στον ιστότοπο", "Hi, I'm NaK0.": "Γεια, είμαι ο NaK0.", "I build software projects focused on machine learning, computer vision, and algorithms.": "Δημιουργώ πρότζεκτ λογισμικού με έμφαση στη μηχανική μάθηση, την υπολογιστική όραση και τους αλγορίθμους.", "Explore my projects": "Δείτε τα πρότζεκτ μου", "Find me online or send me an email.": "Βρείτε με στο διαδίκτυο ή στείλτε μου email.", "GitHub profile": "Προφίλ GitHub", "LinkedIn profile": "Προφίλ LinkedIn", "Email me": "Στείλτε μου email",
-            "Digit drawing canvas": "Καμβάς σχεδίασης ψηφίων", "Draw with a pointer or touch. For keyboard drawing, focus the canvas, hold Space, and move with the arrow keys.": "Σχεδιάστε με δείκτη ή αφή. Για σχεδίαση με πληκτρολόγιο, εστιάστε στον καμβά, κρατήστε πατημένο το Space και κινηθείτε με τα βέλη.",
             "NaK0 | Software and Machine Learning Projects": "NaK0 | Πρότζεκτ λογισμικού και μηχανικής μάθησης", "About NaK0": "Σχετικά με τον NaK0", "Projects | NaK0": "Πρότζεκτ | NaK0", "Digit Recognition | NaK0": "Αναγνώριση ψηφίων | NaK0", "Pathfinding Visualizer | NaK0": "Οπτικοποίηση εύρεσης διαδρομής | NaK0"
         },
         sq: {
             "Home": "Kryefaqja", "About": "Rreth meje", "Contact": "Kontakti", "Primary navigation": "Navigimi kryesor",
             "Enter site": "Hyr në faqe", "Hi, I'm NaK0.": "Përshëndetje, jam NaK0.", "I build software projects focused on machine learning, computer vision, and algorithms.": "Krijoj projekte softuerike të përqendruara te mësimi makinerik, vizioni kompjuterik dhe algoritmet.", "Explore my projects": "Shiko projektet e mia", "Find me online or send me an email.": "Më gjeni në internet ose më dërgoni një email.", "GitHub profile": "Profili në GitHub", "LinkedIn profile": "Profili në LinkedIn", "Email me": "Më dërgoni email",
-            "Digit drawing canvas": "Kanavacë për vizatimin e shifrave", "Draw with a pointer or touch. For keyboard drawing, focus the canvas, hold Space, and move with the arrow keys.": "Vizato me maus ose prekje. Për vizatim me tastierë, fokuso kanavacën, mbaj Space dhe lëviz me shigjetat.",
             "NaK0 | Software and Machine Learning Projects": "NaK0 | Projekte softuerike dhe të mësimit makinerik", "About NaK0": "Rreth NaK0", "Projects | NaK0": "Projektet | NaK0", "Digit Recognition | NaK0": "Njohja e shifrave | NaK0", "Pathfinding Visualizer | NaK0": "Vizualizues i gjetjes së rrugës | NaK0"
         },
         sv: {
             "Home": "Hem", "About": "Om", "Contact": "Kontakt", "Primary navigation": "Huvudnavigation",
             "Enter site": "Gå in på webbplatsen", "Hi, I'm NaK0.": "Hej, jag är NaK0.", "I build software projects focused on machine learning, computer vision, and algorithms.": "Jag bygger mjukvaruprojekt med fokus på maskininlärning, datorseende och algoritmer.", "Explore my projects": "Utforska mina projekt", "Find me online or send me an email.": "Hitta mig online eller skicka ett mejl.", "GitHub profile": "GitHub-profil", "LinkedIn profile": "LinkedIn-profil", "Email me": "Skicka ett mejl",
-            "Digit drawing canvas": "Rityta för siffror", "Draw with a pointer or touch. For keyboard drawing, focus the canvas, hold Space, and move with the arrow keys.": "Rita med mus eller pekskärm. För att rita med tangentbordet: fokusera ritytan, håll ned mellanslag och flytta med piltangenterna.",
             "NaK0 | Software and Machine Learning Projects": "NaK0 | Programvaru- och maskininlärningsprojekt", "About NaK0": "Om NaK0", "Projects | NaK0": "Projekt | NaK0", "Digit Recognition | NaK0": "Sifferigenkänning | NaK0", "Pathfinding Visualizer | NaK0": "Visualisering av vägsökning | NaK0"
         }
     };
@@ -98,7 +95,7 @@
             "Enter NaK0's portfolio.": "Είσοδος στο portfolio του NaK0.",
             "NaK0's software, machine learning, computer vision, and algorithm projects.": "Πρότζεκτ λογισμικού, μηχανικής μάθησης, υπολογιστικής όρασης και αλγορίθμων του NaK0.",
             "Click to enter": "Κάντε κλικ για να εισέλθετε",
-            "This website is an effort to showcase my work because apparently keeping projects hidden in random folders isn't considered a portfolio.": "Αυτός ο ιστότοπος παρουσιάζει τη δουλειά μου, γιατί, όπως φαίνεται, τα πρότζεκτ κρυμμένα σε τυχαίους φακέλους δεν θεωρούνται portfolio.",
+            "This website is an effort to showcase my work because apparently keeping projects hidden in random folders isn't considered a portfolio.": "Αυτός ο ιστότοπος παρουσιάζει τη δουλειά μου, γιατί, προφανώς, τα πρότζεκτ κρυμμένα σε τυχαίους φακέλους δεν θεωρούνται portfolio.",
             "Pathfinding Algorithms": "Αλγόριθμοι εύρεσης διαδρομών",
             "An interactive visualizer for BFS, DFS, Greedy BFS, and A* Search.": "Διαδραστική οπτικοποίηση των BFS, DFS, Greedy BFS και A*.",
             "Pathfinding Visualizer": "Οπτικοποίηση εύρεσης διαδρομών",
@@ -129,7 +126,7 @@
             "Enter NaK0's portfolio.": "Hyr në portofolin e NaK0.",
             "NaK0's software, machine learning, computer vision, and algorithm projects.": "Projektet e NaK0 në softuer, mësim makinerik, vizion kompjuterik dhe algoritme.",
             "Click to enter": "Kliko për të hyrë",
-            "This website is an effort to showcase my work because apparently keeping projects hidden in random folders isn't considered a portfolio.": "Kjo faqe paraqet punën time, sepse projektet e fshehura në dosje të rastësishme, me sa duket, nuk quhen portofol.",
+            "This website is an effort to showcase my work because apparently keeping projects hidden in random folders isn't considered a portfolio.": "Kjo faqe paraqet punën time, sepse projektet e fshehura në dosje të rastësishme, më duket se nuk quhen portofol.",
             "Pathfinding Algorithms": "Algoritme për gjetjen e rrugës",
             "An interactive visualizer for BFS, DFS, Greedy BFS, and A* Search.": "Vizualizues interaktiv për BFS, DFS, Greedy BFS dhe A*.",
             "Pathfinding Visualizer": "Vizualizues për gjetjen e rrugës",
@@ -190,6 +187,51 @@
         Object.assign(translations[language], dictionary);
     }
 
+    const writingTranslations = {
+        el: {
+            "Writing": "Γραφή", "WRITING": "ΓΡΑΦΗ", "Thoughts, experiments & discoveries.": "Σκέψεις, πειράματα και ανακαλύψεις.", "A collection of technical explorations, lessons learned, and occasional reflections on technology and beyond.": "Μια συλλογή τεχνικών εξερευνήσεων, μαθημάτων και περιστασιακών σκέψεων για την τεχνολογία και πέρα από αυτήν.", "Featured article": "Προτεινόμενο άρθρο", "Article collection": "Άρθρα", "Search articles": "Αναζήτηση άρθρων", "All": "Όλα", "Software Engineering": "Μηχανική λογισμικού", "Artificial Intelligence": "Τεχνητή νοημοσύνη", "Machine Learning": "Μηχανική μάθηση", "Tutorials": "Οδηγοί", "Thoughts": "Σκέψεις", "Read article": "Διαβάστε το άρθρο", "Example article": "Δείγμα άρθρου", "min read": "λεπτά ανάγνωσης", "No articles available yet.": "Δεν υπάρχουν ακόμη άρθρα.", "No articles match your search.": "Δεν βρέθηκαν άρθρα που να ταιριάζουν στην αναζήτησή σας.", "No articles in this category.": "Δεν υπάρχουν άρθρα σε αυτή την κατηγορία.", "← Back to Writing": "← Επιστροφή στη γραφή", "By": "Από", "Published": "Δημοσιεύτηκε", "Updated": "Ενημερώθηκε", "Share": "Κοινοποίηση", "Copy link": "Αντιγραφή συνδέσμου", "Link copied": "Ο σύνδεσμος αντιγράφηκε", "Copy failed": "Η αντιγραφή απέτυχε", "Copy code": "Αντιγραφή κώδικα", "Copied": "Αντιγράφηκε", "Table of contents": "Πίνακας περιεχομένων", "Related articles": "Σχετικά άρθρα", "No related articles yet.": "Δεν υπάρχουν ακόμη σχετικά άρθρα.", "Previous article": "Προηγούμενο άρθρο", "Next article": "Επόμενο άρθρο"
+        },
+        sq: {
+            "Writing": "Shkrime", "WRITING": "SHKRIME", "Thoughts, experiments & discoveries.": "Mendime, eksperimente dhe zbulime.", "A collection of technical explorations, lessons learned, and occasional reflections on technology and beyond.": "Një përmbledhje eksplorimesh teknike, mësimesh të nxjerra dhe reflektimesh të herëpashershme mbi teknologjinë e më gjerë.", "Featured article": "Artikull i veçuar", "Article collection": "Artikuj", "Search articles": "Kërko artikuj", "All": "Të gjitha", "Software Engineering": "Inxhinieri softuerike", "Artificial Intelligence": "Inteligjencë artificiale", "Machine Learning": "Mësim makinerik", "Tutorials": "Udhëzues", "Thoughts": "Mendime", "Read article": "Lexo artikullin", "Example article": "Artikull shembull", "min read": "min lexim", "No articles available yet.": "Nuk ka ende artikuj.", "No articles match your search.": "Nuk u gjetën artikuj që përputhen me kërkimin tënd.", "No articles in this category.": "Nuk ka artikuj në këtë kategori.", "← Back to Writing": "← Kthehu te shkrimet", "By": "Nga", "Published": "Publikuar", "Updated": "Përditësuar", "Share": "Ndaje", "Copy link": "Kopjo lidhjen", "Link copied": "Lidhja u kopjua", "Copy failed": "Kopjimi dështoi", "Copy code": "Kopjo kodin", "Copied": "U kopjua", "Table of contents": "Përmbajtja", "Related articles": "Artikuj të ngjashëm", "No related articles yet.": "Nuk ka ende artikuj të ngjashëm.", "Previous article": "Artikulli i mëparshëm", "Next article": "Artikulli tjetër"
+        },
+        sv: {
+            "Writing": "Texter", "WRITING": "TEXTER", "Thoughts, experiments & discoveries.": "Tankar, experiment och upptäckter.", "A collection of technical explorations, lessons learned, and occasional reflections on technology and beyond.": "En samling tekniska utforskningar, lärdomar och tillfälliga reflektioner om teknik och annat.", "Featured article": "Utvalt artikel", "Article collection": "Artiklar", "Search articles": "Sök artiklar", "All": "Alla", "Software Engineering": "Mjukvaruutveckling", "Artificial Intelligence": "Artificiell intelligens", "Machine Learning": "Maskininlärning", "Tutorials": "Guider", "Thoughts": "Tankar", "Read article": "Läs artikeln", "Example article": "Exempelartikel", "min read": "min läsning", "No articles available yet.": "Det finns inga artiklar ännu.", "No articles match your search.": "Inga artiklar matchar din sökning.", "No articles in this category.": "Det finns inga artiklar i den här kategorin.", "← Back to Writing": "← Tillbaka till texter", "By": "Av", "Published": "Publicerad", "Updated": "Uppdaterad", "Share": "Dela", "Copy link": "Kopiera länk", "Link copied": "Länken kopierades", "Copy failed": "Kopieringen misslyckades", "Copy code": "Kopiera kod", "Copied": "Kopierad", "Table of contents": "Innehållsförteckning", "Related articles": "Relaterade artiklar", "No related articles yet.": "Det finns inga relaterade artiklar ännu.", "Previous article": "Föregående artikel", "Next article": "Nästa artikel"
+        }
+    };
+    for (const [language, dictionary] of Object.entries(writingTranslations)) {
+        Object.assign(translations[language], dictionary);
+    }
+
+    const terminalTranslations = {
+        el: {
+            "About me terminal": "Τερματικό σχετικά με εμένα",
+            "Choose a command": "Επιλέξτε μια εντολή", "Interactive profile commands": "Διαδραστικές εντολές προφίλ", "Interactive profile ready.": "Το διαδραστικό προφίλ είναι έτοιμο.",
+            "Olen Shofiti — a curious software developer and problem solver with a fully developed frontal lobe.": "Olen Shofiti — περίεργος προγραμματιστής λογισμικού και λύτης προβλημάτων με πλήρως ανεπτυγμένο μετωπιαίο λοβό.",
+            "Software, machine learning, computer vision, microcontrollers, algorithms, robotics.": "Λογισμικό, μηχανική μάθηση, υπολογιστική όραση, μικροελεγκτές, αλγόριθμοι, ρομποτική.",
+            "Philosophy, technology, geopolitics, psychology, spirituality": "Φιλοσοφία, τεχνολογία, γεωπολιτική, ψυχολογία, πνευματικότητα",
+            "Building, learning, and occasionally debugging friendly bugs.": "Δημιουργώ, μαθαίνω, και που και που κυνηγάω bugs.", "Find me online or send me an email.": "Βρείτε με στο διαδίκτυο ή στείλτε μου email."
+        },
+        sq: {
+            "About me terminal": "Terminali rreth meje",
+            "Choose a command": "Zgjidh një komandë", "Interactive profile commands": "Komandat interaktive të profilit", "Interactive profile ready.": "Profili interaktiv është gati.",
+            "Olen Shofiti — a curious software developer and problem solver with a fully developed frontal lobe.": "Olen Shofiti — zhvillues softueri kureshtar dhe zgjidhës problemesh me lob frontal plotësisht të zhvilluar.",
+            "Software, machine learning, computer vision, microcontrollers, algorithms, robotics.": "Softuer, mësim makinerik, vizion kompjuterik, mikrokontrollues, algoritme, robotikë.",
+            "Philosophy, technology, geopolitics, psychology, spirituality": "Filozofi, teknologji, gjeopolitikë, psikologji, spiritualitet",
+            "Building, learning, and occasionally debugging friendly bugs.": "Ndërtoj, mësoj, dhe herë pas here korrigjoj defektet që krijova.", "Find me online or send me an email.": "Më gjej online ose më dërgo një email."
+        },
+        sv: {
+            "About me terminal": "Terminal för information om mig",
+            "Choose a command": "Välj ett kommando", "Interactive profile commands": "Interaktiva profilkommandon", "Interactive profile ready.": "Den interaktiva profilen är klar.",
+            "Olen Shofiti — a curious software developer and problem solver with a fully developed frontal lobe.": "Olen Shofiti — en nyfiken mjukvaruutvecklare och problemlösare med en fullt utvecklad pannlob.",
+            "Software, machine learning, computer vision, microcontrollers, algorithms, robotics.": "Mjukvara, maskininlärning, datorseende, mikrokontroller, algoritmer, robotik.",
+            "Philosophy, technology, geopolitics, psychology, spirituality": "Filosofi, teknik, geopolitik, psykologi, andlighet",
+            "Building, learning, and occasionally debugging friendly bugs.": "Bygger, lär mig och felsöker ibland vänliga buggar.", "Find me online or send me an email.": "Hitta mig online eller skicka ett mejl."
+        }
+    };
+    for (const [language, dictionary] of Object.entries(terminalTranslations)) {
+        Object.assign(translations[language], dictionary);
+    }
+
     function detectLanguage() {
         let saved = null;
         try { saved = localStorage.getItem("olen-language"); } catch (error) { /* Private browsing can block storage. */ }
@@ -219,6 +261,10 @@
         document.querySelectorAll("[data-language-content]").forEach(element => {
             const key = element.dataset.languageContent;
             element.setAttribute("content", dictionary[key] || key);
+        });
+        document.querySelectorAll("[data-language-placeholder]").forEach(element => {
+            const key = element.dataset.languagePlaceholder;
+            element.setAttribute("placeholder", dictionary[key] || key);
         });
         const select = document.getElementById("language-select");
         if (select) {

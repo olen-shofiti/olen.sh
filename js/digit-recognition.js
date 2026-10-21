@@ -351,6 +351,8 @@ if (!canvas || !clearButton || !predictButton || !predictionDisplay) {
         });
 
         predictButton.addEventListener("click", predictDigit);
-        setStatus("Draw a digit from 0 to 9, then choose Predict.");
+        // Begin fetching and initializing the model now, so prediction is ready
+        // as soon as the visitor has drawn a digit.
+        loadModel().catch(error => console.error("Digit model preload failed", error));
     }
 }

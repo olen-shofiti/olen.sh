@@ -4,3 +4,8 @@
 .Trashes
 *.md
 !README.md
+!content/
+!content/writing/
+!content/writing/*.md
+!docs/
+!docs/WRITING.md
